@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from './components/App'
+import Base from './components/Base'
 import { routes } from './routes'
 
 Vue.use(Router);
@@ -25,6 +25,6 @@ const router = new Router({
 
 new Vue({
     el: '#app',
-    render: h => h(App),
+    render: h => h(Base),
     router: router
 });

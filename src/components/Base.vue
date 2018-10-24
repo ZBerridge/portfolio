@@ -1,13 +1,7 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <router-link to="/" tag="li" exact active-class="active" class="nav-item">
-                    <a>Home</a>
-                </router-link>
-            </ul>
-        </div>
-    </nav>
+    <div class="container-fluid home-container">
+        <router-view :home="home"></router-view>
+    </div>
 </template>
 
 <script>

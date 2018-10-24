@@ -1,12 +1,15 @@
 <template>
-    <div class="container-fluid">
-        <router-view name="home"></router-view>
-        <div class="home-logo-container d-flex align-items-center justify-content-center">
-            <h4 id="home-logo" class="fade-in">{{ msg }}</h4>
-        </div>
-        <div class="d-none container-fluid">
-            <div class="row">
-                <div class="col-12 text-center"><router-link :to="{ name: 'game' }">Let's play a game...</router-link></div>
+    <div class="home-logo-container d-flex align-items-center justify-content-center">
+        <div class="row">
+            <div class="col-12">
+                <h4 id="home-logo" class="fade-in">{{ msg }}</h4>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <h2 class="fade-in link">
+                    <router-link to="/game" tag="span">
+                        <a>Game</a>
+                    </router-link>
+                </h2>
             </div>
         </div>
     </div>
