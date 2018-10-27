@@ -4,13 +4,6 @@
             <div class="col-12">
                 <h4 id="home-logo" class="fade-in">{{ msg }}</h4>
             </div>
-            <div class="col-12 d-flex justify-content-center">
-                <h2 class="fade-in link">
-                    <router-link to="/game" tag="span">
-                        <a>Game</a>
-                    </router-link>
-                </h2>
-            </div>
         </div>
     </div>
 </template>

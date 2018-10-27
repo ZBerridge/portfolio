@@ -9,6 +9,9 @@ body {
   margin: 0;
   padding: 0; }
 
+.font-white {
+  color: #FFFFFF; }
+
 .bg-black {
   background-color: #000000; }
 
@@ -18,7 +21,6 @@ body {
 /* Home Page */
 .home-container {
   height: 100vh;
-  background-color: #000000;
   padding: 0 5%; }
 
 .home-logo-container {
