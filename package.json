@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "npm run development",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch-poll": "npm run watch -- --watch-poll",
@@ -12,8 +12,7 @@
     "uglify-build-css": "uglifycss --output ./dist/css/styles.min.css ./dist/css/styles.css",
     "build-js": "npm run webpack-build",
     "webpack-build": "webpack --config webpack.config.js",
-    "build-all": "npm run build-css && npm run build-js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot"
+    "build-all": "npm run build-css && npm run build-js"
   },
   "dependencies": {
     "vue": "^2.5.17",

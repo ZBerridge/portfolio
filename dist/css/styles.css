@@ -73,5 +73,33 @@ h2.link a {
     opacity: 0; }
   to {
     opacity: 1; } }
+/** Othello Game Styles */
+#othelloGrid {
+  border: 10px outset black;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin: 0px auto; }
+
+#othelloGrid th {
+  width: 60px;
+  height: 60px;
+  font-size: 12px;
+  color: red;
+  border: 2px solid black; }
+
+#othelloGrid td {
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  cursor: pointer; }
+
+#othelloGrid td.green {
+  background-color: green; }
+
+#othelloGrid td.white {
+  background-color: #FFFFFF; }
+
+#othelloGrid td.black {
+  background-color: #000000; }
 
 /*# sourceMappingURL=styles.css.map */
