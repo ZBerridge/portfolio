@@ -128,7 +128,7 @@ function playerTurn(x, y) {
 }
 
 // validateMove takes current coordinates in the array (x, y), the direction indicators (xMove, yMove)
-// and retains the initial
+// and retains the initial 
 function validateMove(x, y, xMove, yMove, xOrigin, yOrigin, counter, justChecking){
     var xCo = eval("x + xMove");
     var yCo = eval("y + yMove");

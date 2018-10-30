@@ -23,12 +23,6 @@
         },
         mounted(){
             this.renderMsg()
-            /*        <div class="row d-flex justify-content-center">
-            <ul class="fade-in">
-                <li><router-link :to="'game'">Game</router-link></li>
-            </ul>
-        </div>
-        <router-view :Game="game">Game</router-view> */
         }
     }
 </script>

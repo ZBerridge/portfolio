@@ -121,7 +121,13 @@
                 xOrigin: '',
                 yOrigin: '' ,
                 playerOneScore: 0,
-                playerTwoScore: 0
+                playerTwoScore: 0,
+                madeMove: false,
+                justChecking: '',
+                hasValid: '',
+                validCount: '',
+                counter: '',
+                gameOver: false
             }
         },
         methods: {
@@ -136,24 +142,29 @@
                         this.gameArray[row][col] = "green";
                     }
                 }
-                console.log(this.gameArray);
+                //console.log(this.gameArray);
             },
             refreshGrid: function() {
                 // passes through table, matching class of each 'td' element to value of corresponding position in
                 // gameArray.
                 let table = document.getElementById("othelloGrid");
-
+                this.playerOneScore = 0;
+                this.playerTwoScore = 0;
                 for (let i = 0, row; row = table.rows[i + 1]; i++) {
                     for (let j = 0, col; col = row.cells[j]; j++) {
                         col.className = this.gameArray[i][j];
                         //col.innerHTML = "" + xOrigin + ", " + yOrigin + "";
-                        if (this.gameArray[i][j] == "white") {
+                        if (this.gameArray[i][j] === "white") {
                             this.playerOneScore++;
                         }
-                        else if (this.gameArray[i][j] == "black") {
+                        else if (this.gameArray[i][j] === "black") {
                             this.playerTwoScore++;
                         }
                     }
+                }
+                if ((this.playerOneScore + this.playerTwoScore === 64) || (this.validCount === 2)) {
+                    this.gameOver = true;
+                    this.declareWinner();
                 }
             },
             newGame: function() {
@@ -167,54 +178,123 @@
 
                 this.playerOneScore = 0;
                 this.playerTwoScore = 0;
+                this.validCount = 0;
                 this.refreshGrid();
                 this.playerColor = "white";
                 this.oppColor = "black";
 
             },
             playerTurn: function(x, y) {
-                if (this.gameArray[x][y] == "green") {
+                if (this.gameArray[x][y] === "green") {
+                    this.justChecking = 0;
                     this.xOrigin = eval("x + 0");
                     this.yOrigin = eval("y + 0");
-                    this.validateMove(x, y, 1, 0, this.xOrigin, this.yOrigin);
-                    this.validateMove(x, y, 1, -1, this.xOrigin, this.yOrigin);
-                    this.validateMove(x, y, 0, -1, this.xOrigin, this.yOrigin);
-                    this.validateMove(x, y, -1, -1, this.xOrigin, this.yOrigin);
-                    this.validateMove(x, y, -1, 0, this.xOrigin, this.yOrigin);
-                    this.validateMove(x, y, -1, 1, this.xOrigin, this.yOrigin);
-                    this.validateMove(x, y, 0, 1, this.xOrigin, this.yOrigin);
-                    this.validateMove(x, y, 1, 1, this.xOrigin, this.yOrigin);
+                    this.counter = 0;
+                    //passes through the cardinal points of the compass to determine if the player's
+                    //selection results in any changes.
+                    this.validateMove(x, y, 1, 0);
+                    this.validateMove(x, y, 1, -1);
+                    this.validateMove(x, y, 0, -1);
+                    this.validateMove(x, y,-1,-1);
+                    this.validateMove(x, y, -1, 0);
+                    this.validateMove(x, y, -1, 1);
+                    this.validateMove(x, y, 0, 1);
+                    this.validateMove(x, y, 1, 1);
                 }
-                this.nextTurn();
+                if ((this.madeMove) && (this.gameOver === false)){
+                    this.nextTurn();
+                }
             },
-            validateMove: function(x, y, xMove, yMove, xOrigin, yOrigin) {
+            validateMove: function(x, y, xMove, yMove) {
                 let xCo = eval("x + xMove");
                 let yCo = eval("y + yMove");
-                if (this.gameArray[xCo][yCo] == this.oppColor) {
-                    this.validateMove(xCo, yCo, xMove, yMove, xOrigin, yOrigin);
+                if ((xCo <= 7) && (xCo >= 0)) {
+                    if ((yCo <= 7) && (yCo >= 0)) {
+                        if (this.gameArray[xCo][yCo] === this.oppColor) {
+                            //counter is necessary so fillMove is not called simply by having the player's
+                            //selection be next to his/her own color.
+                            this.counter++;
+                            this.validateMove(xCo, yCo, xMove, yMove);
+                        }
+                        else if ((this.gameArray[xCo][yCo] === this.playerColor) && (this.counter !== 0)) {
+                            if (this.justChecking === 0){
+                                this.fillMove(xCo, yCo, xMove, yMove);
+                            }
+                            else if (this.justChecking === 1) {
+                                this.hasValid = 1;
+                                this.validCount = 0;
+                            }
+                        }
+                    }
                 }
-                else if (this.gameArray[xCo][yCo] == this.playerColor) {
-                    this.fillMove(xOrigin, yOrigin, xCo, yCo, xMove, yMove);
-                }
-
             },
-            fillMove: function(xO, yO, xF, yF, xMove, yMove) {
-                while ((xO !== xF) || (yO != yF)) {
-                    this.gameArray[xO][yO] = this.playerColor;
-                    xO = xO + xMove;
-                    yO = yO + yMove;
+            fillMove: function(xF, yF, xMove, yMove) {
+                while ((this.xOrigin !== xF) || (this.yOrigin !== yF)) {
+                    this.gameArray[this.xOrigin][this.yOrigin] = this.playerColor;
+                    this.xOrigin = this.xOrigin + xMove;
+                    this.yOrigin = this.yOrigin + yMove;
+                    this.madeMove = true;
                 }
                 this.refreshGrid();
-
             },
             nextTurn: function() {
-                if (this.playerColor == "white") {
+                if (this.playerColor === "white") {
                     this.playerColor = "black";
                     this.oppColor = "white";
                 }
                 else {
                     this.playerColor = "white";
                     this.oppColor = "black";
+                }
+                this.hasValid = 0;
+
+                this.madeMove = false;
+                this.refreshGrid();
+                this.checkForMoves();
+            },
+            checkForMoves: function(){
+                this.justChecking = 1;
+                for (let x = 0; x < this.gameArray.length; x++){
+                    for (let y = 0; y < this.gameArray[x].length; y++){
+                        if ((this.gameArray[x][y] === "green") && (this.hasValid === 0)){
+
+                            this.xOrigin = eval("x + 0");
+                            this.yOrigin = eval("y + 0");
+                            this.counter = 0;
+                            //passes through the cardinal points of the compass to determine if the player's
+                            //selection results in any changes.
+                            this.validateMove(x,y,1,0);
+                            this.validateMove(x,y,1,-1);
+                            this.validateMove(x,y,0,-1);
+                            this.validateMove(x,y,-1,-1);
+                            this.validateMove(x,y,-1,0);
+                            this.validateMove(x,y,-1,1);
+                            this.validateMove(x,y,0,1);
+                            this.validateMove(x,y,1,1);
+                        }
+
+                    }
+                }
+                if (this.hasValid === 0) {
+                    alert("Player has no moves.");
+                    this.validCount++;
+                    if (this.gameOver === false) {
+                        this.nextTurn();
+                    }
+                }
+            },
+            declareWinner:function () {
+                if (this.playerOneScore === this.playerTwoScore) {
+                    alert("I'm not even sure a tie can happen...");
+                    this.newGame();
+                }
+                if (this.playerOneScore > this.playerTwoScore) {
+                    alert("Player 1 wins!");
+                    this.newGame();
+                }
+                if (this.playerTwoScore > this.playerOneScore) {
+                    alert("Player 2 wins!");
+                    this.newGame();
                 }
             }
         }
