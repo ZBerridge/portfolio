@@ -201,15 +201,15 @@
                     this.validateMove(x, y, 0, 1);
                     this.validateMove(x, y, 1, 1);
                 }
-                if ((this.madeMove) && (this.gameOver === false)){
+                if ((this.madeMove) && (!this.gameOver)){
                     this.nextTurn();
                 }
             },
             validateMove: function(x, y, xMove, yMove) {
                 let xCo = eval("x + xMove");
                 let yCo = eval("y + yMove");
-                if ((xCo <= 7) && (xCo >= 0)) {
-                    if ((yCo <= 7) && (yCo >= 0)) {
+                if ((parseInt(xCo) < 8) && (parseInt(xCo) > -1)) {
+                    if ((parseInt(yCo) < 8) && (parseInt(yCo) > -1)) {
                         if (this.gameArray[xCo][yCo] === this.oppColor) {
                             //counter is necessary so fillMove is not called simply by having the player's
                             //selection be next to his/her own color.
@@ -229,7 +229,7 @@
                 }
             },
             fillMove: function(xF, yF, xMove, yMove) {
-                while ((this.xOrigin !== xF) || (this.yOrigin !== yF)) {
+                while (((this.xOrigin !== xF) || (this.yOrigin !== yF)) && (this.gameArray[this.xOrigin] !== null) && (this.gameArray[this.xOrigin][this.yOrigin] !== null)) {
                     this.gameArray[this.xOrigin][this.yOrigin] = this.playerColor;
                     this.xOrigin = this.xOrigin + xMove;
                     this.yOrigin = this.yOrigin + yMove;
