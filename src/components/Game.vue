@@ -185,6 +185,8 @@
 
             },
             playerTurn: function(x, y) {
+                console.log('X: ' + x);
+                console.log('Y: ' + y);
                 if (this.gameArray[x][y] === "green") {
                     this.justChecking = 0;
                     this.xOrigin = eval("x + 0");
@@ -205,7 +207,9 @@
                     this.nextTurn();
                 }
             },
-            validateMove: function(x, y, xMove, yMove) {
+            validateMove: function(x, y, xMove, yMove){
+            // validateMove takes current coordinates in the array (x, y), the direction indicators (xMove, yMove)
+            // and retains the initial
                 let xCo = eval("x + xMove");
                 let yCo = eval("y + yMove");
                 if ((parseInt(xCo) < 8) && (parseInt(xCo) > -1)) {
@@ -229,7 +233,7 @@
                 }
             },
             fillMove: function(xF, yF, xMove, yMove) {
-                while (((this.xOrigin !== xF) || (this.yOrigin !== yF)) && (this.gameArray[this.xOrigin] !== null) && (this.gameArray[this.xOrigin][this.yOrigin] !== null)) {
+                while ((this.xOrigin !== xF) || (this.yOrigin !== yF)) {
                     this.gameArray[this.xOrigin][this.yOrigin] = this.playerColor;
                     this.xOrigin = this.xOrigin + xMove;
                     this.yOrigin = this.yOrigin + yMove;
