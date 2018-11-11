@@ -16,7 +16,7 @@
         </div>
     </nav>-->
     <div class="container-fluid zb-nav-wrap fixed-top bg-light">
-        <div class="row">
+        <div class="row px-3">
             <nav id="zb-nav" class="container navbar navbar-expand-lg navbar-light  py-4 px-4">
                 <a class="navbar-brand" href="#">ZBerridge</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

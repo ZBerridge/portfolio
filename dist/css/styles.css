@@ -21,7 +21,7 @@ body {
 /* Home Page */
 .home-container {
   height: 100vh;
-  padding: 0 5%; }
+  padding: 0 !important; }
 
 .home-logo-container {
   height: 100%;
