@@ -1,6 +1,6 @@
 <template>
     <div class="othello-game-container">
-        <div class="row">
+        <div class="row" >
             <div class="col-12">
                 <figure id="othelloGame">
                     <table class="table" id="othelloGrid">
@@ -189,8 +189,8 @@
                 console.log('Y: ' + y);
                 if (this.gameArray[x][y] === "green") {
                     this.justChecking = 0;
-                    this.xOrigin = eval("x + 0");
-                    this.yOrigin = eval("y + 0");
+                    this.xOrigin = x;
+                    this.yOrigin = y;
                     this.counter = 0;
                     //passes through the cardinal points of the compass to determine if the player's
                     //selection results in any changes.
