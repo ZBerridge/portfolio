@@ -1,5 +1,6 @@
 import Game from './components/Game'
 import App from './components/App'
+import Contact from './components/Contact'
 
 export const routes = [
     {
@@ -11,9 +12,13 @@ export const routes = [
         component: Game
     },
     {
+        path: '/contact',
+        component: Contact
+    },
+    {
         path: '*',
         component: {
-            template: '<h1>Page Not Found</h1>'
+            template: '<section id="four-oh-four" class="d-flex justify-content-center align-items-center font-white"><h1>Page Not Found</h1></section>'
         }
     }
 ];

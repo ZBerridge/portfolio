@@ -1,5 +1,7 @@
 <template>
-    <div class="col-xs-12 col-md-6" v-html="content">
+    <div class="row">
+        <div class="col-12" v-html="content">
+        </div>
     </div>
 </template>
 <script>

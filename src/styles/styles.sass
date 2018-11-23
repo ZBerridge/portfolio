@@ -8,6 +8,7 @@ $light-blue: #b3cde0
 $light-grey: #C0C0C0
 $dark-grey: #262626
 $deep-red: #820000
+$green-haze: #019875
 $base-transition: .2s all
 
 /** Contents **/
@@ -24,6 +25,9 @@ body
 
 .bg-black
   background-color: $black
+
+.bg-g-haze
+  background-color: $green-haze
 
 .container-fluid
   padding: 0
@@ -52,6 +56,9 @@ h2.link a
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3)
   z-index: 1000
 
+#zb-nav a
+  color: $white
+
 #zb-nav ul.navbar-nav
   list-style:  none
   padding: 0
@@ -65,6 +72,17 @@ h2.link a
 #zb-nav
   justify-content: space-between
 
+#zb-nav .navbar-toggler
+  border: 1px solid $light-grey
+  transition: $base-transition
+
+#zb-nav button.navbar-toggler:focus
+  outline: none !important
+  border: none
+
+#zb-nav .navbar-toggler-icon
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, .6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")
+
 @media (max-width: 991px)
   .navbar-nav
     float: right
@@ -74,11 +92,11 @@ h2.link a
 main
   margin-top: 100px
 
-#bio
-  border-bottom: 1px solid black
-
 section:nth-child(even)
   background-color: #707070 !important
+
+section#bio
+  //background: url('/wp-content/themes/zberridge/dist/assets/img/code-bg.jpg')
 
 .bio-img-wrap
   border-radius: 5px
@@ -207,3 +225,20 @@ section:nth-child(even)
 
 #othelloGrid td.black
   background-color: $black
+
+/** 404 page styles **/
+#four-oh-four
+  height: 100vh
+  width: 100vw
+
+/** Contact page styles **/
+section#contact
+  height: 100%
+  width: 100%
+
+section#contact .contact-email a
+  color: $white
+  transition: $base-transition
+
+section#contact .contact-email a:hover
+  color: $light-grey
