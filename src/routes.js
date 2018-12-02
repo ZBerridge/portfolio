@@ -1,11 +1,16 @@
 import Game from './components/Game'
 import App from './components/App'
 import Contact from './components/Contact'
+import About from './components/About'
 
 export const routes = [
     {
         path: '',
         component: App
+    },
+    {
+        path: '/About',
+        component: About
     },
     {
         path: '/game',

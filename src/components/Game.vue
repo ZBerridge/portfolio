@@ -185,8 +185,6 @@
 
             },
             playerTurn: function(x, y) {
-                console.log('X: ' + x);
-                console.log('Y: ' + y);
                 if (this.gameArray[x][y] === "green") {
                     this.justChecking = 0;
                     this.xOrigin = x;

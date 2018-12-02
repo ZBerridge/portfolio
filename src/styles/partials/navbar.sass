@@ -1,0 +1,37 @@
+/** Navbar Styles **/
+.zb-nav-wrap
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3)
+  z-index: 1000
+
+#zb-nav a
+  color: $white
+
+#zb-nav ul.navbar-nav
+  list-style:  none
+  padding: 0
+
+#zb-nav ul.navbar-nav .nav-item:hover
+  text-decoration: underline
+
+#zb-nav #navbarNav
+  flex-grow: 0
+
+#zb-nav
+  justify-content: space-between
+
+#zb-nav .navbar-toggler
+  border: 1px solid $light-grey
+  transition: $base-transition
+
+#zb-nav button.navbar-toggler:focus
+  outline: none !important
+  border: none
+
+#zb-nav .navbar-toggler-icon
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, .6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")
+
+@media (max-width: 991px)
+  .navbar-nav
+    float: right
+
+/** End Navbar Styles **/

@@ -1,36 +1,10 @@
-/*!
- / Copyright (c) 2018.  Designed and built by Zachary Berridge.
- /
-$asphalt-grey: #7f8c8d
-$black: #000000
-$white: #FFFFFF
-$light-blue: #b3cde0
-$light-grey: #C0C0C0
-$dark-grey: #262626
-$deep-red: #820000
-$green-haze: #019875
-$base-transition: .2s all
-
-/** Contents **/
-/*
-/* General Styles: line # ??
-/*
-
-body
-  margin: 0
-  padding: 0
-
-.font-white
-  color: $white
-
-.bg-black
-  background-color: $black
-
-.bg-g-haze
-  background-color: $green-haze
-
-.container-fluid
-  padding: 0
+@import partials/general
+@import partials/navbar
+@import partials/banner
+@import partials/slide-in
+@import partials/scanlines
+@import partials/flip
+@import partials/post
 
 /* Home Page
 .home-container
@@ -51,151 +25,13 @@ h2.link a
   font-family: 'Exo 2', sans-serif
   font-size: 1.5rem
 
-/** Navbar Styles **/
-.zb-nav-wrap
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3)
-  z-index: 1000
-
-#zb-nav a
-  color: $white
-
-#zb-nav ul.navbar-nav
-  list-style:  none
-  padding: 0
-
-#zb-nav ul.navbar-nav .nav-item:hover
-  text-decoration: underline
-
-#zb-nav #navbarNav
-  flex-grow: 0
-
-#zb-nav
-  justify-content: space-between
-
-#zb-nav .navbar-toggler
-  border: 1px solid $light-grey
-  transition: $base-transition
-
-#zb-nav button.navbar-toggler:focus
-  outline: none !important
-  border: none
-
-#zb-nav .navbar-toggler-icon
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, .6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")
-
-@media (max-width: 991px)
-  .navbar-nav
-    float: right
-
-/** End Navbar Styles **/
 /** Main Body Styles **/
-main
-  margin-top: 100px
 
-section:nth-child(even)
+section:nth-child(odd)
   background-color: #707070 !important
 
-section#bio
-  //background: url('/wp-content/themes/zberridge/dist/assets/img/code-bg.jpg')
-
-.bio-img-wrap
-  border-radius: 5px
-
-.bio-img-wrap img
-  -webkit-filter: grayscale(100%) /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%)
-
 /** End Main Body Styles **/
-/** Scanlines CSS **/
-.scanlines
-  position: relative
-  overflow: hidden
 
-.scanlines:before, .scanlines:after
-  display: block
-  pointer-events: none
-  content: ''
-  position: absolutE
-
-.scanlines:before
-  width: 100%
-  height: 2px
-  z-index: 999
-  background: rgba(0, 0, 0, 0.3)
-  opacity: 0.75
-  -webkit-animation: scanline 20s linear infinite
-  animation: scanline 20s linear infinite
-.scanlines:after
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  z-index: 999
-  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 51%)
-  background-size: 100% 5px
-  -webkit-animation: scanlines 1s steps(60) infinite
-  animation: scanlines 1s steps(60) infinite
-
-
-/* ANIMATE UNIQUE SCANLINE */
-@-webkit-keyframes scanline
-  0%
-    -webkit-transform: translate3d(0, 200000%, 0)
-    transform: translate3d(0, 200000%, 0)
-
-@keyframes scanline
-  0%
-    -webkit-transform: translate3d(0, 200000%, 0)
-    transform: translate3d(0, 200000%, 0)
-
-@-webkit-keyframes scanlines
-  0%
-    background-position: 0 50%
-
-@keyframes scanlines
-  0%
-    background-position: 0 50%
-/** End Scanlines CSS **/
-
-.fade-in
-  -webkit-animation: fadein 5s /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 5s  /* Firefox < 16 */
-  -o-animation: fadein 5s /* Opera < 12.1 */
-  animation: fadein 5s
-
-@keyframes fade-in
-  from
-    opacity: 0
-  to
-    opacity: 1
-
-/* Firefox < 16 */
-@-moz-keyframes fadein
-  from
-    opacity: 0
-  to
-    opacity: 1
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein
-  from
-    opacity: 0
-  to
-    opacity: 1
-
-/* Internet Explorer */
-@-ms-keyframes fadein
-  from
-    opacity: 0
-  to
-    opacity: 1
-
-/* Opera < 12.1 */
-@-o-keyframes fadein
-  from
-    opacity: 0
-  to
-    opacity: 1
 
 /** Othello Game Styles **/
 #othelloGrid

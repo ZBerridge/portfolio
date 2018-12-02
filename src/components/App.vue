@@ -1,10 +1,12 @@
 <template>
-    <main class="col-12 bd-content px-0" role="main">
-        <bio-section></bio-section>
-    </main>
+    <div>
+        <home-banner></home-banner>
+        <home-qualifications></home-qualifications>
+    </div>
 </template>
 <script>
-    import BioSection from './BioSection'
+    import HomeBanner from './HomeBanner'
+    import HomeQualifications from './HomeQualifications'
 
     export default {
         data () {
@@ -19,7 +21,8 @@
             }
         },
         components: {
-            'bio-section' : BioSection
+            'home-banner' : HomeBanner,
+            'home-qualifications' : HomeQualifications
         },
         mounted(){
             this.renderMsg()
