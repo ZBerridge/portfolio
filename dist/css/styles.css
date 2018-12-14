@@ -145,13 +145,19 @@ section#banner .img-background {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%); }
 
-@media (max-width: 1200px) {
+@media (max-width: 2400px) {
   section#banner .img-background {
     min-height: 600px;
     height: 60vh; }
 
   .banner-headline {
     margin-top: 60%; } }
+@media (max-width: 1920px) {
+  section#banner .img-background {
+    min-height: 600px; }
+
+  .banner-headline {
+    margin-top: 20%; } }
 @media (max-width: 992px) {
   section#banner .img-background {
     min-height: 500px;
@@ -318,6 +324,42 @@ section#banner .img-background {
 .post-wrapper {
   padding-top: 160px; }
 
+/** Othello Game Styles */
+#othelloGrid {
+  border: 10px outset black;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin: 0px auto;
+  background-color: #000000; }
+
+#othelloGrid th {
+  display: none; }
+
+#othelloGrid td {
+  width: 60px;
+  height: 60px;
+  border: 10px solid black;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  cursor: pointer; }
+
+#othelloGrid td.green {
+  background-color: green; }
+
+#othelloGrid td.white {
+  background-color: #FFFFFF; }
+
+#othelloGrid td.black {
+  background-color: #000000; }
+
+#othelloSection .btn-othello {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 15px 30px;
+  font-size: 2em;
+  letter-spacing: 3px; }
+
 /* Home Page */
 .home-container {
   height: 100vh;
@@ -342,35 +384,6 @@ section:nth-child(odd) {
   background-color: #707070 !important; }
 
 /** End Main Body Styles */
-/** Othello Game Styles */
-#othelloGrid {
-  border: 10px outset black;
-  border-collapse: collapse;
-  font-size: 11px;
-  margin: 0px auto; }
-
-#othelloGrid th {
-  width: 60px;
-  height: 60px;
-  font-size: 12px;
-  color: red;
-  border: 2px solid black; }
-
-#othelloGrid td {
-  width: 60px;
-  height: 60px;
-  border: 2px solid black;
-  cursor: pointer; }
-
-#othelloGrid td.green {
-  background-color: green; }
-
-#othelloGrid td.white {
-  background-color: #FFFFFF; }
-
-#othelloGrid td.black {
-  background-color: #000000; }
-
 /** 404 page styles */
 #four-oh-four {
   height: 100vh;

@@ -5,6 +5,7 @@
 @import partials/scanlines
 @import partials/flip
 @import partials/post
+@import partials/othello
 
 /* Home Page
 .home-container
@@ -31,36 +32,6 @@ section:nth-child(odd)
   background-color: #707070 !important
 
 /** End Main Body Styles **/
-
-
-/** Othello Game Styles **/
-#othelloGrid
-  border: 10px outset rgb(0, 0, 0)
-  border-collapse: collapse
-  font-size: 11px
-  margin: 0px auto
-
-#othelloGrid th
-  width: 60px
-  height: 60px
-  font-size: 12px
-  color: red
-  border: 2px solid black
-
-#othelloGrid td
-  width: 60px
-  height: 60px
-  border: 2px solid black
-  cursor: pointer
-
-#othelloGrid td.green
-  background-color: green
-
-#othelloGrid td.white
-  background-color: $white
-
-#othelloGrid td.black
-  background-color: $black
 
 /** 404 page styles **/
 #four-oh-four

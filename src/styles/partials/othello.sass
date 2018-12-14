@@ -1,0 +1,36 @@
+/** Othello Game Styles **/
+
+#othelloGrid
+  border: 10px outset rgb(0, 0, 0)
+  border-collapse: collapse
+  font-size: 11px
+  margin: 0px auto
+  background-color: $black
+
+#othelloGrid th
+  display: none
+
+#othelloGrid td
+  width: 60px
+  height: 60px
+  border: 10px solid black
+  -webkit-border-radius: 40px
+  -moz-border-radius: 40px
+  border-radius: 40px
+  cursor: pointer
+
+#othelloGrid td.green
+  background-color: green
+
+#othelloGrid td.white
+  background-color: $white
+
+#othelloGrid td.black
+  background-color: $black
+
+#othelloSection .btn-othello
+  background-color: $black
+  color: $white
+  padding: 15px 30px
+  font-size: 2em
+  letter-spacing: 3px

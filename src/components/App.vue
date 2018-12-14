@@ -2,11 +2,13 @@
     <div>
         <home-banner></home-banner>
         <home-qualifications></home-qualifications>
+        <othello-game></othello-game>
     </div>
 </template>
 <script>
     import HomeBanner from './HomeBanner'
     import HomeQualifications from './HomeQualifications'
+    import OthelloGame from './Othello'
 
     export default {
         data () {
@@ -22,7 +24,8 @@
         },
         components: {
             'home-banner' : HomeBanner,
-            'home-qualifications' : HomeQualifications
+            'home-qualifications' : HomeQualifications//,
+            //'othello-game': OthelloGame
         },
         mounted(){
             this.renderMsg()

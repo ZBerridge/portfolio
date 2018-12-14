@@ -14,7 +14,8 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build-css": "npm run uglify-build-css",
     "uglify-build-css": "uglifycss --output ./dist/css/styles.min.css ./dist/css/styles.css",
-    "build-js": "npm run webpack-build",
+    "uglify-build-js": "uglifyjs -c -m -o ./dist/js/bundle.min.js -- ./dist/js/bundle.js",
+    "build-js": "npm run webpack-build && npm run uglify-build-js",
     "webpack-build": "webpack --config webpack.config.js",
     "build-all": "npm run build-css && npm run build-js"
   },
@@ -35,6 +36,7 @@
     "lodash": "^4.17.4",
     "uglify-js": "^3.4.9",
     "uglifycss": "0.0.29",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.20.2",
