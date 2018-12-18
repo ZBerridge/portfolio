@@ -117,9 +117,9 @@
                                         <button class="btn-danger" v-on:click="newGame" id="newGame">
                                             New Game!
                                         </button>
-                                        <div class="scoreboard">
-                                            <span id="player1score">{{ playerOneScore }}</span>
-                                            <span id="player2score">{{ playerTwoScore }}</span>
+                                        <div class="scoreboard d-flex justify-content-around">
+                                            <button id="player1score">{{ playerOneScore }}</button>
+                                            <button id="player2score">{{ playerTwoScore }}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +127,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -174,6 +173,7 @@
                 this.playerTwoScore = 0;
                 for (let i = 0, row; row = table.rows[i]; i++) {
                     for (let j = 0, col; col = row.cells[j]; j++) {
+
                         col.className = this.gameArray[i][j];
                         if (this.gameArray[i][j] === "white") {
                             this.playerOneScore++;
@@ -229,11 +229,11 @@
             validateMove: function(x, y, xMove, yMove, xOrigin, yOrigin){
             // validateMove takes current coordinates in the array (x, y), the direction indicators (xMove, yMove)
             // and retains the initial
-                let xCo = eval("x + xMove");
-                let yCo = eval("y + yMove");
+                let xCo = x + xMove;
+                let yCo = y + yMove;
 
-                if (xCo < 8 && xCo > -1) {
-                    if (yCo < 8 && yCo > -1) {
+                if ((xCo <= 7) && (xCo >= 0)) {
+                    if ((yCo <= 7) && (yCo >= 0)) {
                         if (this.gameArray[xCo][yCo] === this.oppColor) {
                             //counter is necessary so fillMove is not called simply by having the player's
                             //selection be next to his/her own color.
@@ -278,12 +278,13 @@
             },
             checkForMoves: function(){
                 this.justChecking = 1;
+                this.hasValid = 0;
                 for (let x = 0; x < this.gameArray.length; x++){
                     for (let y = 0; y < this.gameArray[x].length; y++){
                         if ((this.gameArray[x][y] === "green") && (this.hasValid === 0)){
 
-                            let xOrigin = eval("x + 0");
-                            let yOrigin = eval("y + 0");
+                            let xOrigin = x;
+                            let yOrigin = y;
                             this.counter = 0;
                             //passes through the cardinal points of the compass to determine if the player's
                             //selection results in any changes.
@@ -296,7 +297,6 @@
                             this.validateMove(x, y, 0, 1, xOrigin, yOrigin);
                             this.validateMove(x, y, 1, 1, xOrigin, yOrigin);
                         }
-
                     }
                 }
                 if (this.hasValid === 0) {

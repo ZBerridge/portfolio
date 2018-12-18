@@ -325,6 +325,10 @@ section#banner .img-background {
   padding-top: 160px; }
 
 /** Othello Game Styles */
+/** Temp Style */
+#othelloSection {
+  display: none; }
+
 #othelloGrid {
   border: 10px outset black;
   border-collapse: collapse;
@@ -359,6 +363,22 @@ section#banner .img-background {
   padding: 15px 30px;
   font-size: 2em;
   letter-spacing: 3px; }
+
+#othelloSection #player1score {
+  margin: 0;
+  width: 40px;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); }
+
+#othelloSection #player2score {
+  margin: 0;
+  width: 40px;
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); }
 
 /* Home Page */
 .home-container {

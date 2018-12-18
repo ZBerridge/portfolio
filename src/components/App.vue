@@ -24,8 +24,8 @@
         },
         components: {
             'home-banner' : HomeBanner,
-            'home-qualifications' : HomeQualifications//,
-            //'othello-game': OthelloGame
+            'home-qualifications' : HomeQualifications,
+            'othello-game': OthelloGame
         },
         mounted(){
             this.renderMsg()
