@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import Base from './components/Base'
 import { routes } from './routes'
 
+/** Bootstrap **/
+/* import 'bootstrap' */
+
 Vue.use(Router);
 
 const router = new Router({

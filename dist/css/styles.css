@@ -2,6 +2,10 @@
  * / Copyright (c) 2018.  Designed and built by Zachary Berridge.
  * / */
 /** Variables */
+/*!
+ * / Copyright (c) 2018.  Designed and built by Zachary Berridge.
+ * / */
+/** Base Styles */
 body {
   margin: 0;
   padding: 0; }
@@ -30,6 +34,9 @@ main.bd-content {
 
 .bg-lightblue {
   background-color: #b3cde0 !important; }
+
+.bg-lapis {
+  background-color: #1F4788 !important; }
 
 .bg-deepred {
   background-color: #820000 !important; }
@@ -118,7 +125,7 @@ main.bd-content {
 /** End Navbar Styles */
 /** Banner styles */
 .banner-content {
-  margin-top: 160px; }
+  margin-top: 20%; }
 
 .banner-headline {
   margin-top: 40%; }
@@ -134,7 +141,7 @@ main.bd-content {
   font-size: 3rem; }
 
 section#banner .img-background {
-  background-image: url("/wp-content/themes/zberridge/dist/assets/img/code-bg.webp");
+  background-image: url("/wp-content/themes/zberridge/dist/assets/img/code-bg.png");
   min-height: 800px;
   height: 70vh; }
 
@@ -145,29 +152,31 @@ section#banner .img-background {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%); }
 
-@media (max-width: 2400px) {
-  section#banner .img-background {
-    min-height: 600px;
-    height: 60vh; }
-
-  .banner-headline {
-    margin-top: 60%; } }
+/*@media (max-width: 2400px)
+ * section#banner .img-background
+ *   min-height: 600px
+ *   height: 60vh
+ * .banner-headline
+ *   margin-top: 60% */
 @media (max-width: 1920px) {
   section#banner .img-background {
     min-height: 600px; }
 
-  .banner-headline {
-    margin-top: 20%; } }
+  /*.banner-headline
+   * margin-top: 20% */ }
+@media (min-width: 1200px) {
+  .banner-content {
+    margin-top: 0%; } }
 @media (max-width: 992px) {
   section#banner .img-background {
     min-height: 500px;
     height: 50vh; }
 
-  .banner-headline {
-    margin-top: 50%; } }
-@media (max-width: 768px) {
-  .banner-headline {
-    margin-top: 25%; } }
+  /*.banner-headline
+   * margin-top: 20% */ }
+/*@media (max-width: 768px)
+ * .banner-headline
+ *   margin-top: 25% */
 /** Slide In utility classes */
 .slide-down-wrapper {
   position: relative;
@@ -322,7 +331,7 @@ section#banner .img-background {
  * / Copyright (c) 2018.  Designed and built by Zachary Berridge.
  * / */
 .post-wrapper {
-  padding-top: 160px; }
+  padding-top: 160px !important; }
 
 /** Othello Game Styles */
 /** Temp Style */
@@ -379,6 +388,32 @@ section#banner .img-background {
   color: #FFFFFF;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); }
+
+section#blog-listing.bg-white {
+  background-color: #FFFFFF !important; }
+
+.zb-post-card {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s; }
+
+.zb-post-card:hover {
+  box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2); }
+
+.zb-post-thumb {
+  padding: 0 !important; }
+
+.zb-post-thumb-wrap {
+  width: 100%;
+  height: 100%;
+  padding: 0 !important; }
+
+.zb-post-thumb-wrap img {
+  width: 100%;
+  height: auto; }
+
+.zb-post-snip {
+  padding: 20px; }
 
 /* Home Page */
 .home-container {

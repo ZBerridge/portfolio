@@ -27,7 +27,7 @@
                 <div class="col-xs-12 col-md-4 py-2">
                     <div class="flip-container qualification" ontouchstart="this.classList.toggle('hover');">
                         <div class="flipper">
-                            <div class="front bg-lightblue d-flex justify-content-center align-items-center">
+                            <div class="front bg-lapis d-flex justify-content-center align-items-center">
                                 <h3 class="font-white">C</h3>
                             </div>
                             <div class="back d-flex justify-content-center align-items-center">
