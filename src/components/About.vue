@@ -24,8 +24,8 @@
         },
         methods: {
             loadContent(){
-                Axios.get('/wp-json/zb/v1/zb-post-slug?slug=about').then(response => {
-                    this.content = response.data
+                Axios.get('/wp-json/zb/v1/zb-page?id=27').then(response => {
+                    this.content = response.data['post_content']
                 })
                     .catch( e => {
                         this.errors.push(e)

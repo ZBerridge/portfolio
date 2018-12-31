@@ -32,8 +32,9 @@ $has_thumbnail = has_post_thumbnail();
                 endif;
                 ?>
             ">
-                <div class="col-xs-12 zb-post-title">
+                <div class="col-xs-12 zb-post-title py-2">
                     <h4><a class="font-black" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                    <span class="font-black font-weight-bold"><?php the_date(); ?></span>
                 </div>
                 <div class="col-xs-12 zb-post-excerpt">
                     <?php the_excerpt(); ?>

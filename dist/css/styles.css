@@ -336,6 +336,27 @@ section#banner .img-background {
 .post-wrapper {
   padding-top: 160px !important; }
 
+.zb-post-title a {
+  text-decoration: none;
+  position: relative; }
+  .zb-post-title a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+    transition: all 0.5s cubic-bezier(1, 0.25, 0, 0.75) 0s; }
+  .zb-post-title a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+
 /** Othello Game Styles */
 /** Temp Style */
 #othelloSection {
