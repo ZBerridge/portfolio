@@ -11,8 +11,10 @@
 
 <script>
     import Axios from 'axios'
+    import {navCloser} from '../mixins/navCloser'
     export default {
         name: "BlogOverview",
+        mixins: [navCloser],
         data () {
             return {
                 content: '',
@@ -20,9 +22,6 @@
             }
         },
         methods: {
-            darkenNav(){
-
-            },
             loadContent(){
                 Axios.get('/wp-json/zb/v1/zb-posts?count=10&skip=0').then(response => {
                     this.content = response.data
@@ -30,15 +29,9 @@
                     .catch( e => {
                         this.errors.push(e)
                     })
-            },
-            closeNav(){
-                let navToggle = document.querySelector('[data-target="#navbarNav"');
-                navToggle.click();
             }
-
         },
         mounted() {
-            //this.darkenNav()
             this.closeNav()
             this.loadContent()
         }

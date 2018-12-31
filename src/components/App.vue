@@ -9,8 +9,10 @@
     import HomeBanner from './HomeBanner'
     import HomeQualifications from './HomeQualifications'
     import OthelloGame from './Othello'
+    import {navCloser} from '../mixins/navCloser'
 
     export default {
+        mixins: [navCloser],
         data () {
             return {
                 msg: '',
@@ -28,6 +30,7 @@
             'othello-game': OthelloGame
         },
         mounted(){
+            this.closeNav()
             this.renderMsg()
         }
     }

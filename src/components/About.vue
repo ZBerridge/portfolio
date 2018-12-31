@@ -11,8 +11,11 @@
 
 <script>
     import Axios from 'axios'
+    import {navCloser} from '../mixins/navCloser'
+
     export default {
         name: "About",
+        mixins: [navCloser],
         data () {
             return {
                 content: '',
@@ -20,9 +23,6 @@
             }
         },
         methods: {
-            darkenNav(){
-
-            },
             loadContent(){
                 Axios.get('/wp-json/zb/v1/zb-post-slug?slug=about').then(response => {
                     this.content = response.data
@@ -33,7 +33,7 @@
             }
         },
         mounted() {
-            //this.darkenNav()
+            this.closeNav()
             this.loadContent()
         }
     }

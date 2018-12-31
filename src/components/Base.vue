@@ -11,11 +11,17 @@
 <script>
     import Navbar from './Navbar'
     import Footer from './Footer'
+    import {navCloser} from '../mixins/navCloser'
+
     export default {
         name: "Base",
+        mixins: [navCloser],
         components: {
             'navbar-component' : Navbar,
             'footer-component' : Footer
+        },
+        mounted() {
+            this.closeNav()
         }
     }
 </script>

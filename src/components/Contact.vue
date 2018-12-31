@@ -14,7 +14,13 @@
 </template>
 
 <script>
+    import {navCloser} from '../mixins/navCloser'
+
     export default {
-        name: "Contact"
+        name: "Contact",
+        mixins: [navCloser],
+        mounted(){
+            this.closeNav()
+        }
     }
 </script>
