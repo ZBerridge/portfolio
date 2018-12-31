@@ -140,8 +140,11 @@ main.bd-content {
   font-weight: 500;
   font-size: 3rem; }
 
+@supports (-webkit-appearance: none) {
+  section#banner .img-background {
+    background-image: url("/wp-content/themes/zberridge/dist/assets/img/code-bg.webp") !important; } }
 section#banner .img-background {
-  background-image: url("/wp-content/themes/zberridge/dist/assets/img/code-bg.jxr");
+  background-image: url("/wp-content/themes/zberridge/dist/assets/img/code-bg.png");
   min-height: 800px;
   height: 70vh; }
 
