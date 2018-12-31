@@ -141,7 +141,7 @@ main.bd-content {
   font-size: 3rem; }
 
 section#banner .img-background {
-  background-image: url("/wp-content/themes/zberridge/dist/assets/img/code-bg.png");
+  background-image: url("/wp-content/themes/zberridge/dist/assets/img/code-bg.jxr");
   min-height: 800px;
   height: 70vh; }
 
