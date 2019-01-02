@@ -2,6 +2,7 @@ import App from './components/App'
 import Contact from './components/Contact'
 import About from './components/About'
 import BlogOverview from './components/BlogOverview'
+import BlogPost from './components/BlogPost'
 
 export const routes = [
     {
@@ -17,8 +18,12 @@ export const routes = [
         component: Contact
     },
     {
-      path: '/blog',
-      component: BlogOverview
+        path: '/blog',
+        component: BlogOverview
+    },
+    {
+        path: '/blog/post',
+        component: BlogPost
     },
     {
         path: '*',

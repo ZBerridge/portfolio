@@ -2,6 +2,13 @@
     <section id="blog-listing" class="py-5 post-wrapper container-fluid fade-in bg-white">
         <div class="container">
             <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Recent Posts</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
                 <div class="col-12 font-black" v-html="content">
                 </div>
             </div>
@@ -29,11 +36,19 @@
                     .catch( e => {
                         this.errors.push(e)
                     })
+            },
+            loadPagination(){
+                Axios.get().then(response => {
+                    //retrieve total count of posts, create pagination as needed
+                }).catch( e => {
+                    this.errors.push(e)
+                })
             }
         },
         mounted() {
             this.closeNav()
             this.loadContent()
+            this.loadPagination()
         }
     }
 
