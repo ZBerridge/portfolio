@@ -18,12 +18,14 @@ export const routes = [
         component: Contact
     },
     {
-        path: '/blog',
-        component: BlogOverview
-    },
-    {
-        path: '/blog/post',
-        component: BlogPost
+        path: '/posts',
+        component: BlogOverview,
+        children : [
+            {
+                path: '/:slug',
+                component: BlogPost
+            }
+        ]
     },
     {
         path: '*',

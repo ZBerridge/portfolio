@@ -10,6 +10,7 @@
  */
 
 $has_thumbnail = has_post_thumbnail();
+$slug = get_post_field('post_name', get_the_ID() );
 
 ?>
 
@@ -33,7 +34,7 @@ $has_thumbnail = has_post_thumbnail();
                 ?>
             ">
                 <div class="col-xs-12 zb-post-title py-2">
-                    <h4><a class="font-black" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                    <h4><a class="font-black" href="<?php echo '/posts/' . $slug; ?>"><?php the_title(); ?></a></h4>
                     <span class="font-black font-weight-bold"><?php the_date(); ?></span>
                 </div>
                 <div class="col-xs-12 zb-post-excerpt">

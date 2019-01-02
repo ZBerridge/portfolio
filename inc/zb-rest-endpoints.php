@@ -17,7 +17,7 @@ if ( ! class_exists('ZB_RestEndpoints')):
         }
 
         private function addPostRoute(){
-            register_rest_route('zb/v1', 'zb-post-slug', array(
+            register_rest_route('zb/v1', 'zb-post', array(
                 'methods' => 'GET',
                 'callback' => array ($this, 'getPostBySlug')
             ));
