@@ -434,7 +434,7 @@ section#blog-listing.bg-white {
 
 .zb-post-thumb-wrap img {
   width: 100%;
-  height: auto; }
+  height: 100%; }
 
 .zb-post-snip {
   padding: 20px; }

@@ -19,13 +19,15 @@ export const routes = [
     },
     {
         path: '/posts',
-        component: BlogOverview,
-        children : [
-            {
-                path: '/:slug',
-                component: BlogPost
-            }
-        ]
+        name: 'posts',
+        props: true,
+        component: BlogOverview
+    },
+    {
+        path: '/post/:slug',
+        name: 'readPost',
+        props: true,
+        component: BlogPost
     },
     {
         path: '*',
