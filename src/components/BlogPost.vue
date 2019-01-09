@@ -23,6 +23,11 @@
     export default {
         name: "BlogPost",
         mixins: [navCloser],
+        props: {
+          slug: {
+              required: true
+          }
+        },
         data () {
             return {
                 content: '',
@@ -33,14 +38,16 @@
         },
         methods: {
             loadPost(){
+                console.log(this.$route);
                 console.log(this.$route.params);
-                /*this.slug = this.$route.params.slug;
+                this.slug = this.$route.params.slug;
                 Axios.get('/wp-json/zb/v1/zb-post?slug=' + this.slug + '&full=true').then(response => {
                     this.title = response.data
+                    console.log(response.data)
                 })
                     .catch( e=> {
                         this.errors.push(e)
-                    })*/
+                    })
 
             },
         },
