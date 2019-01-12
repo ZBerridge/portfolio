@@ -43,12 +43,21 @@
                 }).catch( e => {
                     this.errors.push(e)
                 })
+            },
+            addRouteTest(){
+                this.$router.push({
+                    name: 'readPost',
+                    params: {
+                        slug: 'wakka-wakka'
+                    }
+                });
             }
         },
         mounted() {
             this.closeNav()
             this.loadContent()
             this.loadPagination()
+            this.addRouteTest()
         }
     }
 
