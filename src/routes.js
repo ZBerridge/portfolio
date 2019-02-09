@@ -14,17 +14,17 @@ export const routes = [
         component: About
     },
     {
-        path: '/contact',
+        path: '/Contact',
         component: Contact
     },
     {
-        path: '/posts',
+        path: '/Posts',
         name: 'posts',
         props: true,
         component: BlogOverview
     },
     {
-        path: '/post/:slug',
+        path: '/Post/:slug',
         name: 'readPost',
         component: BlogPost
     },

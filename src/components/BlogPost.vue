@@ -41,7 +41,7 @@
                 console.log(this.$route);
                 console.log(this.$route.params);
                 this.slug = this.$route.params.slug;
-                Axios.get('/wp-json/zb/v1/zb-post?slug=' + this.slug + '&full=true').then(response => {
+                Axios.get('https://zberridge.com/wp-json/zb/v1/zb-post?slug=' + this.slug + '&full=true').then(response => {
                     this.title = response.data
                     console.log(response.data)
                 })

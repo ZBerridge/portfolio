@@ -24,7 +24,7 @@
         },
         methods: {
             loadContent(){
-                Axios.get('/wp-json/zb/v1/zb-page?id=27').then(response => {
+                Axios.get('https://zberridge.com/wp-json/zb/v1/zb-post?slug=About&full=true').then(response => {
                     this.content = response.data['post_content']
                 })
                     .catch( e => {

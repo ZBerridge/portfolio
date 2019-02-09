@@ -79,7 +79,7 @@
         },
         methods: {
             loadContent(){
-                Axios.get('/wp-json/zb/v1/zb-post-slug?slug=biodetails').then(response => {
+                Axios.get('//zberridge.com/wp-json/zb/v1/zb-post-slug?slug=biodetails').then(response => {
                     this.content = response.data
                 })
                 .catch( e => {

@@ -30,7 +30,7 @@
         },
         methods: {
             loadContent(){
-                Axios.get('/wp-json/zb/v1/zb-posts?count=10&skip=0').then(response => {
+                Axios.get('https://zberridge.com/wp-json/zb/v1/zb-posts?count=10&skip=0').then(response => {
                     this.content = response.data
                 })
                     .catch( e => {
@@ -57,7 +57,7 @@
             this.closeNav()
             this.loadContent()
             this.loadPagination()
-            this.addRouteTest()
+            //this.addRouteTest()
         }
     }
 
