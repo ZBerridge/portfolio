@@ -9,8 +9,9 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-12 font-black" v-html="content">
-                </div>
+                <!--<div class="col-12 font-black" v-html="content">
+                </div>-->
+                <blog-post v-for="post in posts" :key="post['ID']" :post="post"></blog-post>
             </div>
         </div>
     </section>
@@ -19,19 +20,22 @@
 <script>
     import Axios from 'axios'
     import {navCloser} from '../mixins/navCloser'
+    import BlogPost from './BlogOverviewPost'
     export default {
         name: "BlogOverview",
         mixins: [navCloser],
         data () {
             return {
                 content: '',
-                errors: Array()
+                errors: Array(),
+                posts: ''
             }
         },
         methods: {
             loadContent(){
-                Axios.get('https://zberridge.com/wp-json/zb/v1/zb-posts?count=10&skip=0').then(response => {
-                    this.content = response.data
+                Axios.get('https://api.zberridge.com/wp-json/zb/v1/zb-posts?count=10&skip=0&full=true').then(response => {
+                    this.posts = response.data
+                    console.log(response.data)
                 })
                     .catch( e => {
                         this.errors.push(e)
@@ -58,6 +62,9 @@
             this.loadContent()
             this.loadPagination()
             //this.addRouteTest()
+        },
+        components:{
+            'blog-post' : BlogPost
         }
     }
 

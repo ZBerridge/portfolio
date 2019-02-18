@@ -1,12 +1,6 @@
 <template>
     <section id="blog-post" class="py-5 post-wrapper container-fluid fade-in bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center post-title">
-                    <h2 v-html="title"></h2>
-                </div>
-            </div>
-        </div>
+        <post-title :title="title"></post-title>
         <div class="container">
             <div class="row">
                 <div class="col-12 font-black" v-html="content">
@@ -19,6 +13,7 @@
 <script>
     import Axios from 'axios'
     import {navCloser} from '../mixins/navCloser'
+    import PostTitle from './BlogPostTitle'
 
     export default {
         name: "BlogPost",
@@ -41,8 +36,8 @@
                 console.log(this.$route);
                 console.log(this.$route.params);
                 this.slug = this.$route.params.slug;
-                Axios.get('https://zberridge.com/wp-json/zb/v1/zb-post?slug=' + this.slug + '&full=true').then(response => {
-                    this.title = response.data
+                Axios.get('https://api.zberridge.com/wp-json/zb/v1/zb-post?slug=' + this.slug + '&full=true').then(response => {
+                    this.title = response.data['post_title']
                     console.log(response.data)
                 })
                     .catch( e=> {
@@ -54,6 +49,9 @@
         mounted() {
             this.closeNav()
             this.loadPost()
+        },
+        components: {
+            'post-title': PostTitle
         }
 
     }

@@ -1,0 +1,53 @@
+<template>
+    <div class="zb-post-card my-5 row">
+        <div class="zb-post-thumb col-xs-12 col-md-4">
+            <div class="zb-post-thumb-wrap d-flex justify-content-center align-items-center" v-html="featured_image"></div>
+        </div>
+        <div class="zb-post-snip col-xs-12 col-md-8            ">
+            <div class="col-xs-12 zb-post-title py-2">
+                <router-link
+                        :to="'/post/' + title"
+                        tag="h4"
+                        class="font-black">
+                    <a>{{ title }}</a>
+                </router-link>
+                <span class="font-black font-weight-bold" v-html="post_date"></span>
+            </div>
+            <div class="col-xs-12 zb-post-excerpt">
+                <p v-html="excerpt"></p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "BlogOverviewPost",
+        props: ['post'],
+        data () {
+            return {
+                excerpt: '',
+                title: '',
+                post_date: '',
+                featured_image: ''
+            }
+        },
+        methods: {
+            renderPost() {
+                //console.log(this.$props.post)
+                this.excerpt = this.$props.post['post_excerpt']
+                this.title = this.$props.post['slug']
+                this.post_date = this.$props.post['post_date']
+                this.featured_image = this.$props.post['featured_image']
+            }
+        },
+        mounted(){
+            this.renderPost()
+        }
+
+    }
+</script>
+
+<style scoped>
+
+</style>
