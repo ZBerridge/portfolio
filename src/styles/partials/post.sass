@@ -2,12 +2,35 @@
  / Copyright (c) 2018.  Designed and built by Zachary Berridge.
  /
 
-.post-wrapper
-  padding-top: 160px!important
+.post-wrapper, section.post-wrapper
+  padding-top: 96px!important
+
+@media (max-width: 991px)
+  .post-wrapper, section.post-wrapper
+    padding-top: 88px!important
+
+section#blog-post.bg-white
+  background-color: $white!important
+
+section#blog-post .post-banner
+  min-height: 700px
+  height: 50vh
+  background-repeat: no-repeat
+  background-position: center
+  background-color: $black!important
+
+@media (max-width: 991px)
+  section#blog-post .post-banner
+    background-size: cover
+    min-height: 600px
+    height: 45vh
 
 .zb-post-title a
   text-decoration: none
   position: relative
+  text-transform: capitalize
+  &:hover
+    text-decoration: none
   &:before
     content: ""
     position: absolute

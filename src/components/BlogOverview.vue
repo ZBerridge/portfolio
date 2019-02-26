@@ -35,7 +35,7 @@
             loadContent(){
                 Axios.get('https://api.zberridge.com/wp-json/zb/v1/zb-posts?count=10&skip=0&full=true').then(response => {
                     this.posts = response.data
-                    console.log(response.data)
+                    //console.log(response.data)
                 })
                     .catch( e => {
                         this.errors.push(e)
@@ -47,21 +47,12 @@
                 }).catch( e => {
                     this.errors.push(e)
                 })
-            },
-            addRouteTest(){
-                this.$router.push({
-                    name: 'readPost',
-                    params: {
-                        slug: 'wakka-wakka'
-                    }
-                });
             }
         },
         mounted() {
             this.closeNav()
             this.loadContent()
             this.loadPagination()
-            //this.addRouteTest()
         },
         components:{
             'blog-post' : BlogPost

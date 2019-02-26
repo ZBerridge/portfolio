@@ -1,12 +1,12 @@
 <template>
-    <div id="about" class="post-wrapper container-fluid fade-in bg-darkgrey">
+    <section id="about" class="py-5 post-wrapper container-fluid fade-in bg-darkgrey">
         <div class="container">
             <div class="row">
                 <div class="col-12 font-white" v-html="content">
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>

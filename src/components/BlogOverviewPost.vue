@@ -1,20 +1,19 @@
 <template>
-    <div class="zb-post-card my-5 row">
+    <div class="zb-post-card my-5 mx-3 mx-sm-0 row">
         <div class="zb-post-thumb col-xs-12 col-md-4">
             <div class="zb-post-thumb-wrap d-flex justify-content-center align-items-center" v-html="featured_image"></div>
         </div>
-        <div class="zb-post-snip col-xs-12 col-md-8            ">
+        <div class="zb-post-snip col-xs-12 col-md-8">
             <div class="col-xs-12 zb-post-title py-2">
                 <router-link
                         :to="'/post/' + title"
-                        tag="h4"
-                        class="font-black">
-                    <a>{{ title }}</a>
+                        tag="h4">
+                    <a class="font-black">{{ title }}</a>
                 </router-link>
-                <span class="font-black font-weight-bold" v-html="post_date"></span>
+                <span class="font-black font-weight-bold">{{ post_date }}</span>
             </div>
             <div class="col-xs-12 zb-post-excerpt">
-                <p v-html="excerpt"></p>
+                <p>{{ excerpt }}</p>
             </div>
         </div>
     </div>
