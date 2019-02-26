@@ -6,7 +6,7 @@
                     <h2 class="text-center section-title">Experience & Qualifications</h2>
                 </div>
                 <div class="col-xs-12 col-md-4 py-2">
-                    <div class="flip-container qualification" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flip-container qualification">
                         <div class="flipper">
                             <div class="front bg-g-haze d-flex justify-content-center align-items-center">
                                 <h3 class="font-white">L</h3>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4 py-2">
-                    <div class="flip-container qualification" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flip-container qualification"><!-- ontouchstart="this.classList.toggle('hover');" -->
                         <div class="flipper">
                             <div class="front bg-lapis d-flex justify-content-center align-items-center">
                                 <h3 class="font-white">C</h3>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4 py-2">
-                    <div class="flip-container qualification" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flip-container qualification">
                         <div class="flipper">
                             <div class="front bg-deepred d-flex justify-content-center align-items-center">
                                 <h3 class="font-white">F</h3>
