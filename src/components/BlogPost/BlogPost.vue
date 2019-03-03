@@ -1,8 +1,21 @@
 <template>
     <section id="blog-post" class="py-5 post-wrapper container-fluid fade-in bg-white">
         <post-title :title="post.title" :img_url="post.image_url"></post-title>
-        <post-date :date="post.date"></post-date>
-        <post-content :content="post.content"></post-content>
+        <div class="container pt-5 pb-3">
+            <div class="row">
+                <post-date :date="post.date"></post-date>
+            </div>
+        </div>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md-7">
+                    <post-content :content="post.content"></post-content>
+                </div>
+                <div class="col-12 col-md-5">
+                    <post-sidebar></post-sidebar>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -12,6 +25,7 @@
     import PostTitle from './BlogPostTitle'
     import PostDate from './BlogPostDate'
     import PostContent from './BlogPostContent'
+    import PostSidebar from './BlogPostSidebar'
 
     export default {
         name: "BlogPost",
@@ -48,7 +62,8 @@
         components: {
             'post-title': PostTitle,
             'post-content': PostContent,
-            'post-date': PostDate
+            'post-date': PostDate,
+            'post-sidebar': PostSidebar
         }
 
     }

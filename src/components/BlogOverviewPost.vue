@@ -1,5 +1,5 @@
 <template>
-    <div class="zb-post-card my-5 mx-3 mx-sm-0 row">
+    <div class="zb-post-card fade-in my-5 mx-3 mx-sm-0 row">
         <div class="zb-post-thumb col-xs-12 col-md-4">
             <div class="zb-post-thumb-wrap d-flex justify-content-center align-items-center" v-html="featured_image"></div>
         </div>
