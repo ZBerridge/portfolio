@@ -1,12 +1,12 @@
 <template>
     <section id="blog-post" class="py-5 post-wrapper container-fluid fade-in bg-white">
         <post-title :title="post.title" :img_url="post.image_url"></post-title>
-        <div class="container pt-5 pb-3">
+        <div class="container py-3">
             <div class="row">
                 <post-date :date="post.date"></post-date>
             </div>
         </div>
-        <div class="container py-5">
+        <div class="container py-3">
             <div class="row">
                 <div class="col-12 col-md-7">
                     <post-content :content="post.content"></post-content>
@@ -22,6 +22,7 @@
 <script>
     import Axios from 'axios'
     import {navCloser} from '../../mixins/navCloser'
+    import {apiCall} from '../../mixins/apiCalls'
     import PostTitle from './BlogPostTitle'
     import PostDate from './BlogPostDate'
     import PostContent from './BlogPostContent'
@@ -29,7 +30,7 @@
 
     export default {
         name: "BlogPost",
-        mixins: [navCloser],
+        mixins: [navCloser, apiCall],
         data () {
             return {
                 post: {
@@ -43,16 +44,19 @@
         },
         methods: {
             loadPost(){
-                Axios.get('https://api.zberridge.com/wp-json/zb/v1/zb-post?slug=' + this.$route.params.slug + '&full=true').then(response => {
-                    this.post.title = response.data.post_title
-                    this.post.content = response.data.post_content
-                    this.post.image_url = response.data.featured_image_url
-                    this.post.date = response.data.post_date
-                })
-                    .catch( e=> {
-                        this.errors.push(e)
+                let callResult;
+                this.makeCall('https://api.zberridge.com/wp-json/zb/v1/zb-post?slug=', (this.$route.params.slug + '&full=true') ).then(
+                    data => {
+                        callResult = data
+                        if (callResult != null) {
+                            this.post.title = callResult.data.post_title
+                            this.post.content = callResult.data.post_content
+                            this.post.image_url = callResult.data.featured_image_url
+                            this.post.date = callResult.data.post_date
+                        } else {
+                            console.log(callResult.data.errors)
+                        }
                     })
-
             },
         },
         mounted() {

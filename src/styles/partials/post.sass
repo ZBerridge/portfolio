@@ -12,18 +12,15 @@
 section#blog-post.bg-white
   background-color: $white!important
 
-section#blog-post .post-banner
-  min-height: 700px
-  height: 50vh
-  background-repeat: no-repeat
-  background-position: center
-  background-color: $black!important
+section#blog-post .post-banner-bg
+  width: 100%
+  height: auto
+  max-height: 60vh
+  object-fit: cover
 
-@media (max-width: 991px)
-  section#blog-post .post-banner
-    background-size: cover
-    min-height: 600px
-    height: 45vh
+section#blog-post .post-title
+  position: absolute
+  bottom: 0px
 
 .zb-post-title a
   text-decoration: none
