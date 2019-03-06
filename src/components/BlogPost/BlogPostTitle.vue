@@ -3,7 +3,7 @@
         <div class="row align-items-end h-100 mx-0">
             <div class="col-12 px-0">
                 <img class="post-banner-bg" v-bind:src="img_url" />
-                <div class="col-12 col-md-8 text-center post-title bg-black py-3 pl-3 pl-md-5" >
+                <div class="col-12 col-md-8 post-title bg-black py-3 pl-3 pl-md-5" >
                     <h2 class="font-white">{{ title }}</h2>
                 </div>
             </div>
