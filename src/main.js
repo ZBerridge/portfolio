@@ -2,9 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Base from './components/Base'
 import { routes } from './routes'
+import Axios from 'axios'
 
 /** Bootstrap **/
 /* import 'bootstrap' */
+
+Axios.defaults.baseURL = 'https://api.zberridge.com/wp-json/zb/v1/'
 
 Vue.use(Router);
 

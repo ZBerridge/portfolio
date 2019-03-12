@@ -18,40 +18,33 @@
 </template>
 
 <script>
-    import Axios from 'axios'
     import {navCloser} from '../mixins/navCloser'
     import BlogPost from './BlogOverviewPost'
+    import ApiCalls from '../api/apiServices'
+
     export default {
         name: "BlogOverview",
         mixins: [navCloser],
         data () {
             return {
-                content: '',
-                errors: Array(),
                 posts: ''
             }
         },
         methods: {
-            loadContent(){
-                Axios.get('https://api.zberridge.com/wp-json/zb/v1/zb-posts?count=10&skip=0&full=true').then(response => {
-                    this.posts = response.data
-                    //console.log(response.data)
-                })
-                    .catch( e => {
-                        this.errors.push(e)
-                    })
+            loadPosts(){
+                ApiCalls.getPosts(10, 0)
+                    .then(data => {
+                        this.posts = data
+                    }).catch(error => console.log(error))
             },
             loadPagination(){
-                Axios.get().then(response => {
-                    //retrieve total count of posts, create pagination as needed
-                }).catch( e => {
-                    this.errors.push(e)
-                })
+                /* To be continued */
+                console.log('...pagination under development')
             }
         },
         mounted() {
             this.closeNav()
-            this.loadContent()
+            this.loadPosts()
             this.loadPagination()
         },
         components:{

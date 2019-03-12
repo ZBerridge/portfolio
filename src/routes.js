@@ -25,7 +25,7 @@ export const routes = [
     },
     {
         path: '/Post/:slug',
-        name: 'readPost',
+        name: 'post',
         component: BlogPost
     },
     {

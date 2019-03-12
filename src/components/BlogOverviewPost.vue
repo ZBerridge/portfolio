@@ -33,7 +33,6 @@
         },
         methods: {
             renderPost() {
-                //console.log(this.$props.post)
                 this.excerpt = this.$props.post['post_excerpt']
                 this.title = this.$props.post['slug']
                 this.post_date = this.$props.post['post_date']
@@ -46,7 +45,3 @@
 
     }
 </script>
-
-<style scoped>
-
-</style>

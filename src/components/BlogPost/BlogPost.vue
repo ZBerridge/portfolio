@@ -12,7 +12,12 @@
                     <post-content :content="post.content"></post-content>
                 </div>
                 <div class="col-12 col-md-5">
-                    <post-sidebar></post-sidebar>
+                    <div class="recent-posts sidebar">
+                        <h3>Recent Posts</h3>
+                        <ul>
+                            <post-sidebar v-for="post in posts" :key="post['ID']" :post="post"></post-sidebar>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -20,17 +25,16 @@
 </template>
 
 <script>
-    import Axios from 'axios'
     import {navCloser} from '../../mixins/navCloser'
-    import {apiCall} from '../../mixins/apiCalls'
     import PostTitle from './BlogPostTitle'
     import PostDate from './BlogPostDate'
     import PostContent from './BlogPostContent'
-    import PostSidebar from './BlogPostSidebar'
+    import ApiCalls from '../../api/apiServices'
+    import RecentPosts from '../Sidebar/RecentPosts'
 
     export default {
         name: "BlogPost",
-        mixins: [navCloser, apiCall],
+        mixins: [navCloser],
         data () {
             return {
                 post: {
@@ -39,35 +43,44 @@
                     image_url: '',
                     date: ''
                 },
-                errors: Array()
+                posts: ''
             }
         },
         methods: {
             loadPost(){
+                console.log(this.$route.params.slug)
                 let callResult;
-                this.makeCall('https://api.zberridge.com/wp-json/zb/v1/zb-post?slug=', (this.$route.params.slug + '&full=true') ).then(
-                    data => {
+                ApiCalls.getPost(this.$route.params.slug)
+                    .then(data => {
                         callResult = data
                         if (callResult != null) {
-                            this.post.title = callResult.data.post_title
-                            this.post.content = callResult.data.post_content
-                            this.post.image_url = callResult.data.featured_image_url
-                            this.post.date = callResult.data.post_date
+                            this.post.title = callResult.post_title
+                            this.post.content = callResult.post_content
+                            this.post.image_url = callResult.featured_image_url
+                            this.post.date = callResult.post_date
                         } else {
                             console.log(callResult.data.errors)
                         }
-                    })
+                    }).catch(error => console.log(error))
             },
+            loadRecents(){
+                ApiCalls.getPosts(10, 0)
+                    .then(data => {
+                        this.posts = data
+                    }).catch(error => console.log(error))
+            }
         },
         mounted() {
             this.closeNav()
             this.loadPost()
+            this.loadRecents()
+
         },
         components: {
             'post-title': PostTitle,
             'post-content': PostContent,
             'post-date': PostDate,
-            'post-sidebar': PostSidebar
+            'post-sidebar': RecentPosts
         }
 
     }
