@@ -26,6 +26,7 @@ export const routes = [
     {
         path: '/Post/:slug',
         name: 'post',
+        props: true,
         component: BlogPost
     },
     {

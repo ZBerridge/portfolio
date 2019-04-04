@@ -1,7 +1,7 @@
 <template>
     <li>
         <router-link
-                :to="'/post/' + title"
+                :to="{ name: 'post', params: { slug: title }}"
                 tag="h5">
             <a class="font-black">{{ title }}</a>
         </router-link>
@@ -19,7 +19,8 @@
         },
         methods: {
             renderLink() {
-                console.log(this.$props.post)
+                //console.log('recent post:...')
+                //console.log(this.$props.post)
                 this.title = this.$props.post['slug']
             }
         },

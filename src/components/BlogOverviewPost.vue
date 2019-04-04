@@ -6,7 +6,7 @@
         <div class="zb-post-snip col-xs-12 col-md-8">
             <div class="col-xs-12 zb-post-title py-2">
                 <router-link
-                        :to="'/post/' + title"
+                        :to="{ name: 'post', params: { slug: title }}"
                         tag="h4">
                     <a class="font-black">{{ title }}</a>
                 </router-link>

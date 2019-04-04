@@ -12,7 +12,7 @@ body {
 
 main.bd-content {
   width: 100%;
-  height: 100%; }
+  background-color: #FFFFFF; }
 
 .font-white {
   color: #FFFFFF !important; }
@@ -140,13 +140,13 @@ main.bd-content {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 4rem;
-  text-shadow: 0px 0px 6px rgba(10, 104, 164, 0.9); }
+  text-shadow: 0px 0px 10px rgba(20, 114, 174, 0.9); }
 
 .banner-headline h3 {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 3rem;
-  text-shadow: 0px 0px 6px rgba(10, 104, 164, 0.9); }
+  text-shadow: 0px 0px 10px rgba(20, 114, 174, 0.9); }
 
 @supports (-webkit-appearance: none) {
   section#banner .img-background {
@@ -353,6 +353,7 @@ section#blog-post.bg-white {
 section#blog-post .post-banner-bg {
   width: 100%;
   height: auto;
+  min-height: 400px;
   max-height: 60vh;
   object-fit: cover; }
 

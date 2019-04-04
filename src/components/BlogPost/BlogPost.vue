@@ -34,6 +34,11 @@
 
     export default {
         name: "BlogPost",
+        props: {
+            slug: {
+                required: true
+            }
+        },
         mixins: [navCloser],
         data () {
             return {
@@ -46,11 +51,16 @@
                 posts: ''
             }
         },
+        watch: {
+            slug(newValue, oldValue){
+                //this.slug = newValue
+                this.loadPost(this.slug)
+            }
+        },
         methods: {
-            loadPost(){
-                console.log(this.$route.params.slug)
+            loadPost(postSlug){
                 let callResult;
-                ApiCalls.getPost(this.$route.params.slug)
+                ApiCalls.getPost(postSlug)
                     .then(data => {
                         callResult = data
                         if (callResult != null) {
@@ -70,11 +80,12 @@
                     }).catch(error => console.log(error))
             }
         },
+        created(){
+            this.loadPost(this.slug)
+        },
         mounted() {
             this.closeNav()
-            this.loadPost()
             this.loadRecents()
-
         },
         components: {
             'post-title': PostTitle,
