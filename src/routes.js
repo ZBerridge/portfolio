@@ -3,6 +3,7 @@ import Contact from './components/Contact'
 import About from './components/About'
 import BlogOverview from './components/BlogOverview'
 import BlogPost from './components/BlogPost/BlogPost'
+import Othello from './components/Othello'
 
 export const routes = [
     {
@@ -28,6 +29,12 @@ export const routes = [
         name: 'post',
         props: true,
         component: BlogPost
+    },
+    {
+        path: '/Othello',
+        name: 'othello',
+        props: true,
+        component: Othello
     },
     {
         path: '*',

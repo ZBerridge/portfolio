@@ -15,6 +15,9 @@
                         <router-link tag="li" to="/About" class="nav-item" active-class="active">
                             <a class="nav-link">About</a>
                         </router-link>
+                        <router-link tag="li" to="/Othello" class="nav-item" active-class="active">
+                            <a class="nav-link">Othello</a>
+                        </router-link>
                         <router-link tag="li" to="/Posts" class="nav-item" active-class="active">
                             <a class="nav-link">Blog</a>
                         </router-link>
@@ -36,18 +39,6 @@
                 isBlack: true,
                 isClear: false
             }
-        },
-        methods: {
-            colorNav(){
-                let currentRoute = this.$router.currentRoute
-                if(currentRoute.fullPath === "/"){
-                    this.isBlack = false;
-                    this.isClear = true;
-                }
-            }
-        },
-        mounted(){
-            //this.colorNav()
         }
     }
 </script>

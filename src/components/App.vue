@@ -2,13 +2,11 @@
     <div>
         <home-banner></home-banner>
         <home-qualifications></home-qualifications>
-        <othello-game></othello-game>
     </div>
 </template>
 <script>
     import HomeBanner from './HomeBanner'
     import HomeQualifications from './HomeQualifications'
-    import OthelloGame from './Othello'
     import {navCloser} from '../mixins/navCloser'
 
     export default {
@@ -26,8 +24,7 @@
         },
         components: {
             'home-banner' : HomeBanner,
-            'home-qualifications' : HomeQualifications,
-            'othello-game': OthelloGame
+            'home-qualifications' : HomeQualifications
         },
         mounted(){
             this.closeNav()

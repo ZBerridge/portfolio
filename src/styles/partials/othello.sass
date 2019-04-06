@@ -2,7 +2,13 @@
 
 /** Temp Style **/
 #othelloSection
-  display: none
+  padding-top: 140px
+  //display: none
+
+#othelloGame
+  border-radius: 8px
+  padding: 8px
+  background-color: $black
 
 #othelloGrid
   border: 10px outset rgb(0, 0, 0)
@@ -23,6 +29,11 @@
   border-radius: 40px
   cursor: pointer
 
+@media (max-width: 540px)
+  #othelloGrid td
+    width: 40px
+    height: 40px
+
 #othelloGrid td.green
   background-color: green
 
@@ -30,7 +41,7 @@
   background-color: $white
 
 #othelloGrid td.black
-  background-color: $black
+  background-color: $othello-grey
 
 #othelloSection .btn-othello
   background-color: $black
@@ -39,18 +50,43 @@
   font-size: 2em
   letter-spacing: 3px
 
-#othelloSection #player1score
-  margin: 0
-  width: 40px
+#othelloSection .score-btn
+  border-radius: 3px
+  border: 1px solid black
+  margin: 20px 40px
+  width: 60px
+  height: 40px
+  float: left
+  text-align: center
+  line-height: 40px
+
+#othelloSection .score-color
+  border-radius: 5px
+  margin: 0 40px
+  width: 60px
+  height: 40px
+  float: left
+  text-align: center
+  line-height: 40px
+
+#othelloSection #player1
   background-color: $white
   color: $black
-  border-radius: 5px
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.7)
 
-#othelloSection #player2score
-  margin: 0
-  width: 40px
+
+#othelloSection #player2
   background-color: $black
   color: $white
-  border-radius: 5px
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.7)
+
+#othelloSection .othello-controls .btn
+  margin: 0 40px
+  width: 120px
+  text-align: center
+
+#othelloSection .othello-controls .btn.black
+  background-color: $black
+  color: $white
+
+#othelloSection .othello-controls .btn.white
+  background-color: $white
+  color: $black

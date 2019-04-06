@@ -94,6 +94,16 @@ main.bd-content {
     opacity: 0; }
   to {
     opacity: 1; } }
+.slide-fade-enter-active {
+  transition: all 1.6s cubic-bezier(1, 0.5, 0.8, 1); }
+
+.slide-fade-leave-active {
+  transition: all 1.6s cubic-bezier(1, 0.5, 0.8, 1); }
+
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0; }
+
 /** Navbar Styles */
 .zb-nav-wrap {
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
@@ -388,7 +398,12 @@ section#blog-post .post-title {
 /** Othello Game Styles */
 /** Temp Style */
 #othelloSection {
-  display: none; }
+  padding-top: 140px; }
+
+#othelloGame {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #000000; }
 
 #othelloGrid {
   border: 10px outset black;
@@ -409,6 +424,10 @@ section#blog-post .post-title {
   border-radius: 40px;
   cursor: pointer; }
 
+@media (max-width: 540px) {
+  #othelloGrid td {
+    width: 40px;
+    height: 40px; } }
 #othelloGrid td.green {
   background-color: green; }
 
@@ -416,7 +435,7 @@ section#blog-post .post-title {
   background-color: #FFFFFF; }
 
 #othelloGrid td.black {
-  background-color: #000000; }
+  background-color: #1E1E1E; }
 
 #othelloSection .btn-othello {
   background-color: #000000;
@@ -425,21 +444,45 @@ section#blog-post .post-title {
   font-size: 2em;
   letter-spacing: 3px; }
 
-#othelloSection #player1score {
-  margin: 0;
-  width: 40px;
-  background-color: #FFFFFF;
-  color: #000000;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); }
+#othelloSection .score-btn {
+  border-radius: 3px;
+  border: 1px solid black;
+  margin: 20px 40px;
+  width: 60px;
+  height: 40px;
+  float: left;
+  text-align: center;
+  line-height: 40px; }
 
-#othelloSection #player2score {
-  margin: 0;
-  width: 40px;
-  background-color: #000000;
-  color: #FFFFFF;
+#othelloSection .score-color {
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); }
+  margin: 0 40px;
+  width: 60px;
+  height: 40px;
+  float: left;
+  text-align: center;
+  line-height: 40px; }
+
+#othelloSection #player1 {
+  background-color: #FFFFFF;
+  color: #000000; }
+
+#othelloSection #player2 {
+  background-color: #000000;
+  color: #FFFFFF; }
+
+#othelloSection .othello-controls .btn {
+  margin: 0 40px;
+  width: 120px;
+  text-align: center; }
+
+#othelloSection .othello-controls .btn.black {
+  background-color: #000000;
+  color: #FFFFFF; }
+
+#othelloSection .othello-controls .btn.white {
+  background-color: #FFFFFF;
+  color: #000000; }
 
 section#blog-listing.bg-white {
   background-color: #FFFFFF !important; }
@@ -467,6 +510,22 @@ section#blog-listing.bg-white {
 .zb-post-snip {
   padding: 20px; }
 
+/** Contact Page Styles */
+#contact .contact-img-wrapper img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  width: 100%;
+  height: auto; }
+
+#contact .sm-links span {
+  margin-right: 16px; }
+
+#contact .sm-links a {
+  color: #FFFFFF; }
+
 /* Home Page */
 .home-container {
   height: 100vh;
@@ -487,9 +546,6 @@ h2.link a {
   font-size: 1.5rem; }
 
 /** Main Body Styles */
-section:nth-child(odd) {
-  background-color: #707070 !important; }
-
 /** End Main Body Styles */
 /** 404 page styles */
 #four-oh-four {
@@ -499,7 +555,8 @@ section:nth-child(odd) {
 /** Contact page styles */
 section#contact {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  min-height: 80vh; }
 
 section#contact .contact-email a {
   color: #FFFFFF;
