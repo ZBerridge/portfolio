@@ -1,6 +1,6 @@
 <template>
     <div class="container fade-in banner-content font-white">
-        <div class="row justify-content-center align-items-center h-100">
+        <div class="row justify-content-center align-items-center h-100 slide-down-outer">
             <div class="slide-down-wrapper">
                 <div class="banner-headline slide-down-content font-white">
                     <h2 class="text-center">Zack Berridge</h2>
