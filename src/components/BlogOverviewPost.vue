@@ -33,7 +33,7 @@
         },
         methods: {
             renderPost() {
-                this.excerpt = this.$props.post['post_excerpt']
+                this.excerpt = this.$props.post['post_excerpt'] + "..."
                 this.title = this.$props.post['slug']
                 this.post_date = this.$props.post['post_date']
                 this.featured_image = this.$props.post['featured_image']
