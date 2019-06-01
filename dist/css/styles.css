@@ -41,6 +41,9 @@ main.bd-content {
 .bg-deepred {
   background-color: #820000 !important; }
 
+.bg-green {
+  background-color: #646568 !important; }
+
 .bg-image-blur {
   -webkit-filter: blur(20px);
   -moz-filter: blur(20px);
@@ -505,16 +508,32 @@ section#blog-listing.bg-white {
 .zb-post-thumb-wrap {
   width: 100%;
   height: 100%;
-  padding: 0 !important; }
+  padding: 0 !important;
+  height: 300px; }
 
 .zb-post-thumb-wrap img {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  object-fit: cover; }
 
 .zb-post-snip {
   padding: 20px; }
 
 /** Contact Page Styles */
+/** Contact page styles */
+section#contact {
+  height: 100%;
+  width: 100%;
+  min-height: 80vh;
+  margin-top: 6em; }
+
+section#contact .contact-email a {
+  color: #FFFFFF;
+  transition: 0.2s all; }
+
+section#contact .contact-email a:hover {
+  color: #C0C0C0; }
+
 #contact .contact-img-wrapper img {
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
@@ -529,6 +548,37 @@ section#blog-listing.bg-white {
 
 #contact .sm-links a {
   color: #FFFFFF; }
+
+/*!
+ * / Copyright (c) 2018.  Designed and built by Zachary Berridge.
+ * / */
+/** Variables */
+section#about.post-wrapper {
+  padding-top: 80px; }
+
+section#about .page-banner {
+  max-height: 60vh; }
+section#about .page-banner-bg {
+  width: 100%;
+  object-fit: cover;
+  max-height: 60vh; }
+section#about .page-title {
+  position: absolute;
+  bottom: 0; }
+section#about .page-title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 110px;
+  background-color: #000000;
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: skew(-45deg);
+  -ms-transform: skew(-45deg);
+  transform: skew(45deg); }
 
 /* Home Page */
 .home-container {
@@ -555,18 +605,5 @@ h2.link a {
 #four-oh-four {
   height: 100vh;
   width: 100%; }
-
-/** Contact page styles */
-section#contact {
-  height: 100%;
-  width: 100%;
-  min-height: 80vh; }
-
-section#contact .contact-email a {
-  color: #FFFFFF;
-  transition: 0.2s all; }
-
-section#contact .contact-email a:hover {
-  color: #C0C0C0; }
 
 /*# sourceMappingURL=styles.css.map */
