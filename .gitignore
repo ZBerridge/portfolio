@@ -3,3 +3,4 @@
 .idea/workspace.xml
 node_modules
 dist
+node_modules/.bin/acorn
