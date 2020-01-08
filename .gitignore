@@ -1,6 +1,7 @@
-
 *.sassc
 .htaccess
 .babelrc
 *.scssc
 *.map
+node_modules
+node_modules
