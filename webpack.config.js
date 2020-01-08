@@ -3,9 +3,9 @@ var path = require('path');
 const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: {
-        app: ['./src/main.js',]
+        app: ['./src/js/main.js',]
     },
     output: {
         path: path.resolve(__dirname, './dist/js'),

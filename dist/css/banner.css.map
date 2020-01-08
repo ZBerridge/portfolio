@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";AAEA,eAAe;EACb,UAAU,EAAE,KAAK",
-"sources": ["../../src/styles/partials/banner.sass"],
-"names": [],
-"file": "banner.css"
-}

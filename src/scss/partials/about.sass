@@ -1,0 +1,36 @@
+@import './variables'
+section#about.post-wrapper
+  padding-top: 80px
+
+section#about
+  p
+    font-size: 18px
+
+  .page-banner
+    max-height: 60vh
+
+  .page-banner-bg
+    width: 100%
+    object-fit: cover
+    max-height: 60vh
+
+  .page-title
+    position: absolute
+    bottom: 0
+
+  .page-title::after
+    content: ''
+    position: absolute
+    right: 0
+    bottom: 0
+    height: 100%
+    width: 110px
+    background-color: $black
+    -webkit-transform-origin: 100% 0
+    -ms-transform-origin: 100% 0
+    transform-origin: 100% 0
+    -webkit-transform: skew(-45deg)
+    -ms-transform: skew(-45deg)
+    transform: skew(45deg)
+
+

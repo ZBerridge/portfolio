@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";;;AAIA,aAAa;EACX,WAAW,EAAE,KAAK",
-"sources": ["../../src/styles/partials/post.sass"],
-"names": [],
-"file": "Post.css"
-}
