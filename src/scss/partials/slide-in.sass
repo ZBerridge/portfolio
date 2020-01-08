@@ -1,0 +1,27 @@
+/** Slide In utility classes **/
+.slide-down-outer
+  position: relative
+
+.slide-down-wrapper
+  position: absolute
+  overflow: hidden
+  height: 100%
+  width: 100%
+  bottom: 0
+
+.slide-down-content
+  position: absolute
+  top: -100px
+  width: 100%
+  -webkit-animation: slide 1s forwards
+  -webkit-animation-delay: 0s
+  animation: slide 1s forwards
+  animation-delay: 0s
+
+@-webkit-keyframes slide
+  100%
+    top: 0
+
+@keyframes slide
+  100%
+    top: 0
