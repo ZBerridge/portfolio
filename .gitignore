@@ -1,10 +1,10 @@
-*.sassc
+*.sass
 .htaccess
 .babelrc
-*.scssc
+*.scss
 *.map
 node_modules
 node_modules
 *.map
-zberridge_com_v2.code-workspace
+Zberridge.com.code-workspace
 src/js/api/apiServices.js
