@@ -1,8 +1,8 @@
 <template>
 
-    <div class="zb-nav-wrap fixed-top font-white bg-black">
+    <div class="zb-nav-wrap fixed-top">
         <div class="row px-3 mx-0">
-            <nav id="zb-nav" class="container navbar navbar-expand-lg py-4 px-4">
+            <nav id="zb-nav" class="container navbar navbar-expand-lg my-3 px-4">
                 <a class="navbar-brand" href="/">ZBerridge</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

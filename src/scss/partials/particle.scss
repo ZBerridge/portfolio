@@ -1,6 +1,9 @@
+/** Particle Canvase Styles **/
+@import "./variables.scss";
+
 .particle-container {
     position: relative;
-    height: 95vh;
+    height: 90vh;
 
     #particles-canvas{
         position: absolute;
@@ -8,6 +11,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(#ffc38c, #ff9b40);
+        background: radial-gradient($light-grey, $grey);
     }
 }

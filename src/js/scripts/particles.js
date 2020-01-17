@@ -2,17 +2,18 @@ export default {
 
     particleController() {
 
-        const canvas = document.getElementById('particles-canvas');
+        const canvas = document.querySelector('#particles-canvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
 
         let particlesArray;
 
         let mouse = {
             x: null,
             y: null,
-            radius: (canvas.height/80) * (canvas.width/80)
+            radius: (canvas.height/130) * (canvas.width/130)
         }
 
         window.addEventListener('mousemove',
@@ -77,14 +78,20 @@ export default {
         // create particle array
         function init() {
             particlesArray = [];
+
             let numberofParticles = (canvas.height * canvas.width) / 9000;
+
+            numberofParticles = (numberofParticles < 50) ? 50 : numberofParticles;
+
+            console.log(numberofParticles);
+
             for (let i = 0; i < numberofParticles; i++){
                 let size = (Math.random() * 5) + 1;
                 let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
                 let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
                 let directionX = (Math.random() * 5) - 2.5;
                 let directionY = (Math.random() * 5) - 2.5;
-                let color = '#8C5223';
+                let color = '#5A5C5B';
 
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
 
@@ -101,7 +108,7 @@ export default {
 
                     if (distance < (canvas.width/7) * (canvas.height/7)){
                         opacityValue = 1 - (distance/20000);
-                        ctx.strokeStyle = 'rgba(140,85,31,' + opacityValue + ')';
+                        ctx.strokeStyle = 'rgba(193,214,198,' + opacityValue + ')';
                         ctx.lineWidth = 1;
                         ctx.beginPath();
                         ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -112,10 +119,18 @@ export default {
             }
         }
 
+        function resetValues(){
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            mouse.radius = ((canvas.height/130) * (canvas.width/130));
+        }
+
         // animation loop
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0,0,innerWidth,innerHeight);
+
+            resetValues();
 
             for (let i = 0; i < particlesArray.length; i++){
                 particlesArray[i].update();
@@ -127,9 +142,9 @@ export default {
         // resize event
         window.addEventListener('resize',
             function(){
-                canvas.width = innerWidth;
-                canvas.height = innerHeight;
-                mouse.radius = ((canvas.height/80) * (canvas.width/80));
+                /*canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+                mouse.radius = ((canvas.height/130) * (canvas.width/130));*/
                 init();
             }
         );
@@ -143,6 +158,5 @@ export default {
 
         init();
         animate();
-        console.log('particles running...');
     }
 }
