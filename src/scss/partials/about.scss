@@ -23,7 +23,7 @@ section#about{
   .page-banner-bg{
     //-webkit-animation: filter-animation 5s infinite;
     -webkit-filter: brightness(50%);
-    filter: brightness(50%);
+    filter: brightness(50%) grayscale(50%);
     transition: all 1s;
     position: relative;
     &:hover{
