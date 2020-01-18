@@ -1,0 +1,20 @@
+/** Footer Styles **/
+@import "./variables.scss";
+
+#footer {
+    background-color: $white;
+    font-family: 'Cormorant SC', serif;
+    font-weight: 600;
+    h5 {
+        font-weight: 600;
+    }
+    color: $dark-grey;
+    border-top: 1px solid rgba(0,0,0,.5);
+    a {
+        color: $dark-grey;
+        transition: all .4s;
+        &:hover {
+            text-shadow: 1px 2px 2px $light-grey;
+        }
+    }
+}

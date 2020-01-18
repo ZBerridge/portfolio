@@ -1,0 +1,40 @@
+/** Slide In utility classes **/
+.slide-outer {
+  position: relative;
+}
+.slide-left-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  .slide-content {
+    h1, h2, h3, h4, h5, h6 {
+      padding-left: 5px;
+    }
+  } 
+}
+
+.slide-content {
+  position: absolute;
+  left: -500px;
+  width: 100%;
+  -webkit-animation: slide 1s forwards;
+  -webkit-animation-delay: 0s;
+  animation: slide 1s forwards;
+  animation-delay: 0s;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes slide {
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+

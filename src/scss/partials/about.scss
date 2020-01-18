@@ -1,0 +1,36 @@
+@import "./variables.scss";
+
+section#about.post-wrapper {
+  padding-top: 80px;
+}
+
+section#about{
+  p{
+    font-size: 18px;
+  }
+  .page-banner {
+    max-height: 60vh;
+  }
+  .page-banner-bg {
+    width: 100%;
+    object-fit: cover;
+    max-height: 60vh;
+  }
+  .page-title {
+    position: absolute;
+    bottom: 0;
+  }
+  .page-banner-bg{
+    position: relative;
+    &::after {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-color: black;
+      content: 'wakka';
+    }
+  }
+}

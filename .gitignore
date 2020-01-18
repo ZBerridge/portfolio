@@ -1,7 +1,8 @@
-*.sass
+dist/js/bundle.min.js
+dist/js/bundle.js
+dist/css/style.css
 .htaccess
 .babelrc
-*.scss
 *.map
 node_modules
 node_modules
