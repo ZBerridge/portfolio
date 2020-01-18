@@ -9,4 +9,3 @@ node_modules
 node_modules
 *.map
 Zberridge.com.code-workspace
-src/js/api/apiServices.js
