@@ -1,6 +1,7 @@
 dist/js/bundle.min.js
 dist/js/bundle.js
 dist/css/style.css
+dist/css/partials/*
 .htaccess
 .babelrc
 *.map
