@@ -19,16 +19,16 @@
   "dependencies": {
     "gulp-sourcemaps": "^2.6.5",
     "vue": "^2.6.11",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.3.2"
   },
   "devDependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.19.2",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
     "cross-env": "^5.0.1",
     "file-loader": "^2.0.0",
-    "grunt": "^1.0.4",
+    "grunt": "^1.1.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-sass": "^1.0.0",
@@ -39,19 +39,19 @@
     "gulp": "^4.0.2",
     "gulp-dart-sass": "^0.9.1",
     "gulp-run": "^1.7.1",
-    "jquery": "^3.1.1",
+    "jquery": "^3.5.1",
     "laravel-mix": "^1.0",
     "lodash": "^4.17.4",
-    "qs": "^6.7.0",
+    "qs": "^6.9.4",
     "time-grunt": "^2.0.0",
-    "uglify-js": "^3.7.2",
+    "uglify-js": "^3.9.4",
     "uglifycss": "0.0.29",
     "uglifyjs-webpack-plugin": "^2.0.1",
-    "vue-loader": "^15.4.2",
+    "vue-loader": "^15.9.2",
     "vue-slick": "^1.1.15",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   }
 }
