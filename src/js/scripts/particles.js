@@ -50,22 +50,25 @@ export default {
                     this.directionY = -this.directionY;
                 }
             
-                // check collision detection - mouse position / particle position
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx*dx + dy*dy);
-                if (distance < mouse.radius + this.size){
-                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10){
-                        this.x += 10;
-                    }
-                    if (mouse.x > this.x && this.x > this.size * 10){
-                        this.x -= 10;
-                    }
-                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10){
-                        this.y += 10;
-                    }
-                    if (mouse.y > this.y && this.y > this.size * 10){
-                        this.y -= 10;
+                // check collision detection - mouse position / particle position - not on mobile
+                if(window.innerWidth > 768) {
+                    
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx*dx + dy*dy);
+                    if (distance < mouse.radius + this.size){
+                        if (mouse.x < this.x && this.x < canvas.width - this.size * 10){
+                            this.x += 10;
+                        }
+                        if (mouse.x > this.x && this.x > this.size * 10){
+                            this.x -= 10;
+                        }
+                        if (mouse.y < this.y && this.y < canvas.height - this.size * 10){
+                            this.y += 10;
+                        }
+                        if (mouse.y > this.y && this.y > this.size * 10){
+                            this.y -= 10;
+                        }
                     }
                 }
                 // move particle
@@ -82,8 +85,6 @@ export default {
             let numberofParticles = (canvas.height * canvas.width) / 9000;
 
             numberofParticles = (numberofParticles < 50) ? 50 : numberofParticles;
-
-            console.log(numberofParticles);
 
             for (let i = 0; i < numberofParticles; i++){
                 let size = (Math.random() * 5) + 1;

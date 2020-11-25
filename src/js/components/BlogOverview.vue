@@ -19,12 +19,13 @@
 
 <script>
     import {navCloser} from '../mixins/navCloser'
+    import {mediaChecker} from '../mixins/mediaChecker'
     import BlogPost from './BlogOverviewPost'
     import ApiCalls from '../api/apiServices'
 
     export default {
         name: "BlogOverview",
-        mixins: [navCloser],
+        mixins: [navCloser, mediaChecker],
         data () {
             return {
                 posts: ''
@@ -44,6 +45,7 @@
         },
         mounted() {
             this.closeNav()
+            this.showBody()
             this.loadPosts()
             this.loadPagination()
         },

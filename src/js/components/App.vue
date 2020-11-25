@@ -9,9 +9,10 @@
     import HomeBanner from './HomeBanner'
     import HomeQualifications from './HomeQualifications'
     import {navCloser} from '../mixins/navCloser'
+    import {mediaChecker} from '../mixins/mediaChecker'
 
     export default {
-        mixins: [navCloser],
+        mixins: [navCloser, mediaChecker],
         data () {
             return {
                 msg: '',
@@ -22,20 +23,6 @@
             renderMsg(){
                 this.msg = this.testMsg
             },
-            showBody(){
-                let pageBody = document.querySelector('body')
-                let mainCss = document.querySelector('link[href="/dist/css/style.css"]')
-                
-                let startCheck = setInterval(mediaCheck, 100)
-                function mediaCheck(){
-                    let mediaCss = mainCss.getAttribute('media')
-                    if(mediaCss == 'all'){
-                        clearInterval(startCheck)
-                        pageBody.style.removeProperty('display')
-                    }
-                }
-
-            }
         },
         components: {
             'home-banner' : ParticleBanner,

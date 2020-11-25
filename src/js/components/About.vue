@@ -10,6 +10,7 @@
 
 <script>
     import {navCloser} from '../mixins/navCloser'
+    import {mediaChecker} from '../mixins/mediaChecker'
     import ApiCalls from '../api/apiServices'
     import PageBanner from './Page/PageBanner'
     import PageContent from './Page/PageContent'
@@ -17,7 +18,7 @@
 
     export default {
         name: "About",
-        mixins: [navCloser],
+        mixins: [navCloser, mediaChecker],
         data () {
             return {
                 post: {
@@ -47,6 +48,7 @@
         },
         mounted() {
             this.closeNav()
+            this.showBody()
             this.loadContent()
         },
         components: {

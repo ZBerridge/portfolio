@@ -26,6 +26,7 @@
 
 <script>
     import {navCloser} from '../../mixins/navCloser'
+    import {mediaChecker} from '../../mixins/mediaChecker'
     import PostTitle from './BlogPostTitle'
     import PostDate from './BlogPostDate'
     import PostContent from './BlogPostContent'
@@ -39,7 +40,7 @@
                 required: true
             }
         },
-        mixins: [navCloser],
+        mixins: [navCloser, mediaChecker],
         data () {
             return {
                 post: {
@@ -85,6 +86,7 @@
         },
         mounted() {
             this.closeNav()
+            this.showBody()
             this.loadRecents()
         },
         components: {

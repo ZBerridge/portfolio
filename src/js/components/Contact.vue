@@ -54,6 +54,7 @@
 
 <script>
     import {navCloser} from '../mixins/navCloser'
+    import {mediaChecker} from '../mixins/mediaChecker'
     import ApiCalls from '../api/apiServices'
 
     export default {
@@ -133,9 +134,10 @@
                 }
             },
         },
-        mixins: [navCloser],
+        mixins: [navCloser, mediaChecker],
         mounted(){
             this.closeNav()
+            this.showBody()
             this.showContact()
         }
     }

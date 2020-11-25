@@ -33,10 +33,11 @@
 <script>
     import OthelloGame from '../scripts/Othello'
     import {navCloser} from '../mixins/navCloser'
+    import {mediaChecker} from '../mixins/mediaChecker'
 
     export default {
         name: "OthelloGame",
-        mixins: [navCloser],
+        mixins: [navCloser, mediaChecker],
         data () {
             return {
                 isGame: true
@@ -49,6 +50,7 @@
         },
         mounted(){
             this.closeNav()
+            this.showBody()
             this.startGame()
         }
     }
