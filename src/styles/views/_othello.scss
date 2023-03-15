@@ -1,0 +1,93 @@
+/** Othello Game Styles **/
+
+/** Temp Style **/
+#othelloSection {
+  padding-top: 140px !important;
+  #othelloGame {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: $black;
+  }
+  #othelloGrid {
+    border: 10px outset rgb(0, 0, 0);
+    border-collapse: collapse;
+    font-size: 11px;
+    margin: 0px auto;
+    background-color: $black;
+    th {
+        display: none;
+    }
+    td {
+        width: 60px;
+        height: 60px;
+        border: 10px solid $black;
+        -webkit-border-radius: 40px;
+        -moz-border-radius: 40px;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all .2s;
+        @media (max-width: 540px) {
+            width: 40px;
+            height: 40px;
+        }
+        &.green {
+            background-color: green;
+        }
+        &.white {
+            background-color: $white;
+        }
+        &.black {
+            background-color: $othello-grey;
+        }
+    }
+  }
+  .btn-othello {
+    background-color: $black;
+    color: $white;
+    padding: 15px 30px;
+    font-size: 2em;
+    letter-spacing: 3px;
+  }
+  .score-btn {
+    border-radius: 3px;
+    border: 1px solid black;
+    margin: 20px 40px;
+    width: 60px;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+  }
+  .score-color {
+    border-radius: 5px;
+    margin: 0 40px;
+    width: 60px;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+  }
+  #player1 {
+    background-color: $white;
+    color: $black;
+  }
+  #player2 {
+    background-color: $black;
+    color: $white;
+  }
+  .othello-controls {
+    .btn {
+        margin: 0 40px;
+        width: 120px;
+        text-align: center;
+        &.black {
+            background-color: $black;
+            color: $white;
+        }
+        &.white {
+            background-color: $white;
+            color: $black;
+        }
+    }
+  }
+}

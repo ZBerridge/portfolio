@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+SC|Montserrat&display=swap');
+
+
+body {
+    background-color: $white;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    .font-black, .font-black a {
+        color: $black!important;
+    }
+    main section:first-of-type:not(#banner) {
+        padding-top: 96px;
+    }
+}
