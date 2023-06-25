@@ -5,10 +5,11 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vite App</title>
-    <link rel="stylesheet" type="text/css" href="/dist/css/main.css" media="none" onload="if(media!='all')media='all'">
+    <link id="main_css" rel="stylesheet" type="text/css" href="/dist/css/main.css" media="none" onload="if(media!='all')media='all'">
   </head>
   <body style="display: none;">
     <div id="portfolio"></div>
+    <noscript><p>Hey, this is a single page application written in Vue.js.  If your browser doesn't support, or has Javascript turned off, this is all you'll see.</p></noscript>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

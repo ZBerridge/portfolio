@@ -1,11 +1,13 @@
 <script setup>
-    import BioBanner from './banners/BioBanner.vue'
-    //import BioThisPage from './BioThisPage'
+import BannerText from './banners/BannerText.vue'
+import ParticleBanner from './banners/EffectBanner.vue'
+import WebDesignText from './banners/WebDesign.vue';
+
 </script>
 <template>
     <section id="banner">
-        <div class="container-fluid mx-0 px-0">
-                <BioBanner></BioBanner>
-        </div>
+        <ParticleBanner></ParticleBanner>
+        <BannerText></BannerText>
+        <WebDesignText></WebDesignText>
     </section>
 </template>

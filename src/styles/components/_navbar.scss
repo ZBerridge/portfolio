@@ -2,53 +2,97 @@
 @import "../bootstrap/variables";
 
 .nav-wrap {
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  background-color: $white;
-  color: $dark-grey;
+  color: $light-gray;
   font-weight: 600;
-}
+  display: flex;
+  justify-content: end;
+  padding-right: 2rem;
+  padding-top: 1rem;
 
-#nav {
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    a {
-        color: $dark-grey;
-        transition: all .4s;
-        text-shadow: 0px 0px 0px #1E1E1E;
-        font-size: 20px;
-        font-family: 'Cormorant SC', serif;
-        &:hover {
-            text-shadow: 1px 4px 4px $light-grey;
-        }
-    }
-    ul.navbar-nav{
-        list-style:  none;
-        padding: 0;
-    }
-    #navbarNav {
-        flex-grow: 0;
-    }
-    button.navbar-toggler {
-        transition: $base-transition;
-        &:focus {
-            outline: none !important;
-            border: none;
-        }
-    }
+  .nav-wrap-inner {
+    position: relative;
+  }
+
+  .navbar-toggle-btn {
+    background: unset;
+    border: none;
+    box-shadow: none;
+    margin-right: 1rem;
+    transform: scale(1.2);
     .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")
+      background-image: none;
+      pointer-events: none;
+      &.hamburger-icon {
+        margin: 0 auto;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        .bar {
+          padding: 0;
+          width: 30px;
+          height: 4px;
+          background-color: $light-gray;
+          display: block;
+          border-radius: 4px;
+          transition: all 0.4s ease-in-out;
+          position: absolute;
+        }
+        .bar1 {
+          top: 2.5px;
+        }
+        .bar2, .bar3 {
+          top: 12.5px;
+        }
+        .bar3 {
+          right: 0;
+        }
+        .bar4 {
+          bottom: 3px;
+        }
+        &.open {
+          .bar {
+            background-color: $white;
+          }
+          .bar1{
+            transform: rotate(45deg);
+            transform-origin: 14%;
+            width: 41px
+          }
+          .bar2 {
+            transform: translateX(-40px);
+            background-color: transparent;
+          }
+          .bar3 {
+            transform: translateX(40px);
+            background-color: transparent;
+          }
+          .bar4 {
+            transform-origin: 14%;
+            transform: rotate(-45deg);
+            width: 41px;
+          }
+        }
       }
-    .navbar-brand {
-        font-weight: 800;
-        font-size: 2.2rem;
     }
-}
-
-@media (max-width: 991px){
-  .navbar-nav {
-    float: right;
+  }
+  #navbarNav {
+    text-align: right;
+    padding-right: 0;
+    right: -300px;
+    &.nav-menu {
+      overflow: hidden;
+      transition: all .3s linear;
+      position: absolute;
+      top: 3rem;
+      &.open {
+          padding-right: 20rem;
+      }
+      .nav-link {
+        padding-bottom: 0;
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
 

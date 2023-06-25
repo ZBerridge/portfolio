@@ -1,0 +1,26 @@
+.particle-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    &:before {
+        filter: blur(5px) grayscale(50%);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        content: "";
+        background-image: url('/src/assets/summer_field_at_night.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.2);
+        z-index: -1;
+    }
+    #particles-canvas {
+        width: inherit;
+        height: inherit;
+        position: relative;
+    }
+}

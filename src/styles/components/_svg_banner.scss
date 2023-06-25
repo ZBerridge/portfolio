@@ -1,0 +1,19 @@
+.svg-wrap {
+    position: absolute;
+    left: 1rem;
+    transition: all .2s;
+    width: calc(100vw - 10%);
+    &.name-wrap {
+        bottom: 8rem;
+    }
+    &.role-wrap {
+        bottom: 3rem;
+    }
+    @include media-breakpoint-up(md) {
+        left: 3rem;
+        width: calc(100vw - 20%);
+    }
+    @include media-breakpoint-up(lg) {
+        width: 40rem;
+    }
+}

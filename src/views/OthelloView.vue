@@ -7,7 +7,7 @@
     })
 </script>
 <template>
-    <section id="othelloSection" class="bg-white font-black pb-5">
+    <section id="othelloSection" class="pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">

@@ -1,7 +1,7 @@
 export default {
     showBody() {
         let pageBody = document.querySelector('body')
-        let mainCss = document.querySelector('link[href="/dist/css/main.css"]')
+        let mainCss = document.querySelector('#main_css')
         
         let startCheck = setInterval(mediaCheck, 100)
         function mediaCheck(){
